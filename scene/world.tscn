@@ -176,7 +176,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 
 shape = SubResource("BoxShape3D_jda1b")
 
 [node name="ball" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.08193, 0.708203, -1.78497)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20507, 0.708203, -1.78497)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ball"]
