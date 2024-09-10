@@ -1,0 +1,11 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://d3brry1orfo08"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f52r2"]
+
+[sub_resource type="Sky" id="Sky_exp7e"]
+sky_material = SubResource("ProceduralSkyMaterial_f52r2")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 1.16
+sky = SubResource("Sky_exp7e")
