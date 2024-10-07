@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://cr206quolw2i1"]
+[gd_scene load_steps=29 format=3 uid="uid://cr206quolw2i1"]
 
 [ext_resource type="Environment" uid="uid://d3brry1orfo08" path="res://worldEnvironment.tres" id="1_dbguy"]
+[ext_resource type="PackedScene" uid="uid://n6lawv4fb7rp" path="res://scene/Planta.tscn" id="2_8dplc"]
 [ext_resource type="PackedScene" uid="uid://dwjhl01gqs0dc" path="res://scene/player.tscn" id="2_u4sqg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1g5p"]
@@ -74,6 +75,11 @@ size = Vector3(0.5, 2, 7)
 [sub_resource type="SphereMesh" id="SphereMesh_2qbfc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0mrmi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y4a2y"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mkn2w"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123863, 0, 0)
@@ -185,5 +191,20 @@ mesh = SubResource("SphereMesh_2qbfc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ball"]
 shape = SubResource("SphereShape3D_0mrmi")
 
+[node name="Planta" parent="." instance=ExtResource("2_8dplc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.329381, 0)
+prompt_message = "Bloco"
+
 [node name="player" parent="." instance=ExtResource("2_u4sqg")]
 transform = Transform3D(0.473221, 0, 0, 0, 0.473221, 0, 0, 0, 0.473221, -2.12336, 0.474607, 2.44852)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["grab"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39581, 1.64561, 0.966369)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_y4a2y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_mkn2w")

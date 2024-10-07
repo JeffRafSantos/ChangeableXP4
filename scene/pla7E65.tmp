@@ -14,12 +14,11 @@ material = SubResource("StandardMaterial3D_pqhw2")
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(0.282835, 0, 0, 0, 0.282835, 0, 0, 0, 0.282835, 0, 0.74772, 0.16665)
-collision_layer = 2
-collision_mask = 3
 script = ExtResource("1_7xp55")
 metadata/_edit_group_ = true
 
 [node name="mesh_player" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_dufxp")
 skeleton = NodePath("../..")
 
@@ -30,7 +29,7 @@ shape = SubResource("CapsuleShape3D_djfyd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.719433, 0)
 
 [node name="Camera" type="Camera3D" parent="Head"]
-transform = Transform3D(3.53563, 0, 0, 0, 3.53563, 0, 0, 0, 3.53563, 0, 0, 0)
+transform = Transform3D(3.53563, 0, 0, 0, 3.53563, 0, 0, 0, 3.53563, 0, 0.0634027, 0)
 current = true
 
 [node name="InteractionRay" type="RayCast3D" parent="Head"]
@@ -47,27 +46,17 @@ offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "*
+text = "
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GrabRay" type="RayCast3D" parent="Head"]
-target_position = Vector3(0, 0, -2.5)
-collision_mask = 7
-script = ExtResource("3_a6l83")
-
 [node name="Hold" type="Node3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, -2)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-
-[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="Head"]
-node_a = NodePath("../StaticBody3D")
-linear_limit_x/enabled = false
-linear_limit_y/enabled = false
-linear_limit_z/enabled = false
+[node name="GrabRay" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -4)
+script = ExtResource("3_a6l83")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)

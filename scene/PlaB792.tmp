@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://n6lawv4fb7rp"]
+
+[ext_resource type="Script" path="res://scene/Planta.gd" id="1_vja6o"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mstys"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pxj1i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y6q8d"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_mstys")
+script = ExtResource("1_vja6o")
+prompt_message = null
+prompt_ = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_pxj1i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+shape = SubResource("BoxShape3D_y6q8d")
