@@ -199,7 +199,7 @@ prompt_message = "Bloco"
 transform = Transform3D(0.473221, 0, 0, 0, 0.473221, 0, 0, 0, 0.473221, -2.12336, 0.474607, 2.44852)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." groups=["grab"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39581, 1.64561, 0.966369)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39581, 0.557597, 0.966369)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

@@ -6,8 +6,8 @@ extends CharacterBody3D
 @onready var joint = $"Head/Generic6DOFJoint3D"
 @onready var staticbody = $Head/StaticBody3D
 
-var picked_object
-var pull_power = 4
+var picked_object: RigidBody3D
+var pull_power = 10
 var rotation_power = 0.05
 
 var locked = false
@@ -23,15 +23,15 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pass
 	
-func _input(event):
+func _unhandled_input(event):
 #identifica se a entrada é a movimentação do mouse
 	
 	if !locked:
 		Player_rotation(event)
-	
+	else:
+		rotate_object(event)
 	if Input.is_action_just_pressed("inspect"):
 		locked = !locked
-	
 	if event.is_action_pressed("b_quit"):
 		#a entrada do jogador foi botão sair
 		get_tree().quit() #encerra o jogo
@@ -43,21 +43,27 @@ func _input(event):
 		elif picked_object != null:
 			remove_object()
 	if Input.is_action_just_pressed("b_up"):
-		pull_power == 10
+		pull_power = 15
 	else: 
-		(pull_power == 4)
+		pull_power = 10
 	pass
 	
 func _process(delta):
 	var b = point.global_position
-	if !locked:
-		if picked_object != null:
-			var a = picked_object.global_position
-			picked_object.look_at_from_position(lerp(a,b,0.1),Head.global_position)
+	if picked_object != null:
+		var a = picked_object.global_position
+		var dir : Vector3 = a.direction_to(b)
+		var dist : float = a.distance_to(b) * pull_power
+		if !locked:
+			picked_object.set_freeze_enabled(false)
+			#picked_object.look_at_from_position(lerp(a,b,0.1),Head.global_position)
 			#picked_object.set_linear_velocity((b-a)*pull_power)
-	else:
-		picked_object.position = b
-		
+			picked_object.move_and_collide((dir * dist)*delta)
+			picked_object.look_at(self.global_position)
+		else:
+			#picked_object.position = b
+			picked_object.move_and_collide((dir * dist)*delta)
+			picked_object.set_freeze_enabled(true)
 
 func _physics_process(delta):
 	var axys = Input.get_vector("b_left", "b_right", "b_up", "b_down")
@@ -84,16 +90,16 @@ func pick_object():
 	var collider = Grab.get_collider()
 	if collider != null and collider.is_in_group("grab"):
 		picked_object = collider
-		joint.set_node_b(picked_object.get_path())
 
 func remove_object():
 	picked_object.set_linear_velocity(Vector3(0,0.001,0))
 	picked_object = null
-	joint.set_node_b(joint.get_path())
 
 func rotate_object(event):
 	if picked_object != null:
 		if event is InputEventMouseMotion:
-			staticbody.rotate_x(deg_to_rad(event.relative.y * rotation_power))
-			staticbody.rotate_y(deg_to_rad(event.relative.x * rotation_power))
-	
+			picked_object.rotation.y = (picked_object.rotation.y + (event.relative.x) * 0.005)
+			picked_object.rotation.x = (picked_object.rotation.x + (event.relative.y) * 0.005)
+			#picked_object.apply_torque(Vector3(event.relative.x,event.relative.y,0))
+			#print(event.relative, " ", picked_object.rotation)
+			pass

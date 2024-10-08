@@ -60,15 +60,6 @@ script = ExtResource("3_a6l83")
 [node name="Hold" type="Node3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-
-[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="Head"]
-node_a = NodePath("../StaticBody3D")
-linear_limit_x/enabled = false
-linear_limit_y/enabled = false
-linear_limit_z/enabled = false
-
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)
 anchors_preset = 8
