@@ -36,6 +36,7 @@ func _input(event):
 		#a entrada do jogador foi botão sair
 		get_tree().quit() #encerra o jogo
 	
+	#se o botão esquerdo do mouse for pressionado
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if picked_object == null:
 			pick_object()
@@ -48,17 +49,14 @@ func _input(event):
 	pass
 	
 func _process(delta):
-	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if picked_object == null:
-			pick_object()
-		elif picked_object != null:
-			remove_object()
-
-	if picked_object != null:
-		var a = picked_object.global_position
-		var b = point.global_position
-		picked_object.set_linear_velocity((b-a)*pull_power)
+	var b = point.global_position
+	if !locked:
+		if picked_object != null:
+			var a = picked_object.global_position
+			picked_object.look_at_from_position(lerp(a,b,0.1),Head.global_position)
+			#picked_object.set_linear_velocity((b-a)*pull_power)
+	else:
+		picked_object.position = b
 		
 
 func _physics_process(delta):
@@ -67,12 +65,6 @@ func _physics_process(delta):
 	var vector_side = transform.basis.x * axys.x
 	var vector_final = (vector_front + vector_side).normalized() * SPEED
 	if !locked:
-		if is_on_floor():
-			velocity.y = 0
-			if Input.is_action_just_pressed("b_jump"):
-				velocity.y = JUMP_VELOCITY
-		else:
-			velocity.y -= gravity * delta
 		velocity = vector_final + Vector3(0, velocity.y, 0)
 		move_and_slide()
 	pass
@@ -92,11 +84,12 @@ func pick_object():
 	var collider = Grab.get_collider()
 	if collider != null and collider.is_in_group("grab"):
 		picked_object = collider
-		#joint.set_node_b(picked_object.get_path())
+		joint.set_node_b(picked_object.get_path())
 
 func remove_object():
+	picked_object.set_linear_velocity(Vector3(0,0.001,0))
 	picked_object = null
-	#joint.set_node_b(joint.get_path())
+	joint.set_node_b(joint.get_path())
 
 func rotate_object(event):
 	if picked_object != null:
