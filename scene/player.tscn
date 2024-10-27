@@ -25,3 +25,6 @@ shape = SubResource("CapsuleShape3D_djfyd")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1.43668, 0, 0, 0, 1.43668, 0, 0, 0, 1.43668, 0, 0.476753, 0)
 current = true
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -1.2)

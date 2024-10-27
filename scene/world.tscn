@@ -1,7 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://cr206quolw2i1"]
+[gd_scene load_steps=28 format=3 uid="uid://cr206quolw2i1"]
 
 [ext_resource type="Environment" uid="uid://d3brry1orfo08" path="res://worldEnvironment.tres" id="1_dbguy"]
 [ext_resource type="PackedScene" uid="uid://dwjhl01gqs0dc" path="res://scene/player.tscn" id="2_u4sqg"]
+[ext_resource type="Script" path="res://scripts/Interagíveis/Objetos.gd" id="3_3pibw"]
+[ext_resource type="Script" path="res://scripts/Interagíveis/interactable.gd" id="4_q5cog"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1g5p"]
 albedo_color = Color(0.576471, 0.388235, 0.113725, 1)
@@ -187,3 +189,17 @@ shape = SubResource("SphereShape3D_0mrmi")
 
 [node name="player" parent="." instance=ExtResource("2_u4sqg")]
 transform = Transform3D(0.473221, 0, 0, 0, 0.473221, 0, 0, 0, 0.473221, -2.12336, 0.474607, 2.44852)
+
+[node name="Script" type="Node3D" parent="."]
+script = ExtResource("3_3pibw")
+
+[node name="Objeto1" type="CSGBox3D" parent="Script"]
+transform = Transform3D(0.404871, 0, 0, 0, 0.794114, 0, 0, 0, 0.469918, 0, 0.995072, -2.94119)
+use_collision = true
+script = ExtResource("4_q5cog")
+interagivel = true
+
+[node name="Objeto2" type="CSGBox3D" parent="Script"]
+transform = Transform3D(0.404871, 0, 0, 0, 0.794114, 0, 0, 0, 0.469918, 0.968671, 0.995072, -2.94119)
+use_collision = true
+script = ExtResource("4_q5cog")
