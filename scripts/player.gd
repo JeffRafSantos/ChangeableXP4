@@ -30,8 +30,10 @@ func _unhandled_input(event):
 		Player_rotation(event)
 	else:
 		rotate_object(event)
-	if Input.is_action_just_pressed("inspect"):
+	
+	if Input.is_action_just_pressed("inspect") and picked_object != null:
 		locked = !locked
+	
 	if event.is_action_pressed("b_quit"):
 		#a entrada do jogador foi botão sair
 		get_tree().quit() #encerra o jogo
@@ -40,10 +42,11 @@ func _unhandled_input(event):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if picked_object == null:
 			pick_object()
-		elif picked_object != null:
+		elif picked_object != null and locked == false:
 			remove_object()
+	
 	if Input.is_action_just_pressed("b_up"):
-		pull_power = 15
+		pull_power = 20
 	else: 
 		pull_power = 10
 	pass
