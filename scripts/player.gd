@@ -3,8 +3,6 @@ extends CharacterBody3D
 @onready var Head = $"Head"
 @onready var Grab = $"Head/GrabRay"
 @onready var point = $"Head/Hold"
-@onready var joint = $"Head/Generic6DOFJoint3D"
-@onready var staticbody = $Head/StaticBody3D
 
 var picked_object: RigidBody3D
 var pull_power = 10
@@ -17,6 +15,7 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var sensitivity = 0.1 #sensibilidade do mouse
+
 
 func _ready():
 	#iniciar gravação do mouse

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://n6lawv4fb7rp" path="res://scene/Planta.tscn" id="2_8dplc"]
 [ext_resource type="PackedScene" uid="uid://dwjhl01gqs0dc" path="res://scene/player.tscn" id="2_u4sqg"]
 [ext_resource type="PackedScene" uid="uid://dibahtbd5fhwd" path="res://scene/Semente.tscn" id="4_mpwu5"]
-[ext_resource type="PackedScene" uid="uid://bo8a7ieu4lsn2" path="res://scene/Vaso.tscn" id="5_xy1b8"]
+[ext_resource type="Script" path="res://scene/Planta.gd" id="4_xxex8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1g5p"]
 albedo_color = Color(0.576471, 0.388235, 0.113725, 1)
@@ -209,13 +209,7 @@ shape = SubResource("ConvexPolygonShape3D_mkn2w")
 
 [node name="Semente" parent="." groups=["grab"] instance=ExtResource("4_mpwu5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84195, 0.486216, 0)
-prompt_message = "Seed"
+script = ExtResource("4_xxex8")
 
-[node name="Planta1" parent="." instance=ExtResource("2_8dplc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.49273, 0.324507, -2.64492)
-
-[node name="Vaso" parent="." groups=["Interacteble"] instance=ExtResource("5_xy1b8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0282307, 0.324507, -2.64492)
-
-[connection signal="interacted" from="Semente" to="Vaso" method="_on_semente_interacted"]
-[connection signal="interacted" from="Vaso" to="Planta1" method="_on_vaso_interacted"]
+[node name="Planta" parent="." instance=ExtResource("2_8dplc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06935, 0)
