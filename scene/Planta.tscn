@@ -1,28 +1,27 @@
 [gd_scene load_steps=6 format=3 uid="uid://n6lawv4fb7rp"]
 
 [ext_resource type="Script" path="res://scene/Planta.gd" id="1_33ptv"]
+[ext_resource type="ArrayMesh" uid="uid://cqhbpm71fxq7e" path="res://Objeto/Vaso.obj" id="2_qyv3m"]
+[ext_resource type="ArrayMesh" uid="uid://cuykcsvgwxx7" path="res://Objeto/flor.obj" id="3_uldfg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mstys"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_pxj1i"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_y6q8d"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_pma3n"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u5xvv"]
+points = PackedVector3Array(-0.727411, 1.61458, 1.26096, -0.272641, 1.66003, -1.46794, -0.263524, 1.85706, -1.41928, 1.45554, 1.66003, 0.260241, 0.13132, 0.0135001, -0.713838, -0.471063, 0.0357494, 0.544247, -1.40985, 1.66003, -0.46722, 0.394709, 1.89902, 1.34742, 0.426485, 0.0397885, 0.584452, 1.00667, 1.89694, -1.01907, -1.35986, 1.89905, 0.382221, -0.597035, 0.0397376, -0.438825, 0.684761, 0.0366149, -0.269016, 0.955181, 1.66003, -1.14937, 0.591308, 1.66003, 1.35186, -1.40985, 1.66003, 0.44232, -0.954796, 1.66003, -1.14937, 1.36436, 1.66003, -0.603708, -0.045256, 1.61458, 1.44304, 1.35988, 1.899, 0.382197, 1.13698, 1.66003, 0.942681, -0.72855, 0.0778169, 0.158891, -1.18377, 1.89869, -0.801752, 0.45482, 1.66003, -1.42235, 0.684768, 0.0366064, 0.244118, 0.13132, 0.0135003, 0.688938, -0.789008, 1.89872, 1.17141, -0.256514, 0.0364377, -0.697156, -1.13687, 1.66003, 0.942681, -0.171282, 0.077864, 0.716112, 0.426484, 0.03979, -0.609351, 0.175549, 1.89985, -1.41754)
 
 [node name="StaticBody3D" type="RigidBody3D" groups=["Interacteble"]]
 physics_material_override = SubResource("PhysicsMaterial_mstys")
 script = ExtResource("1_33ptv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = SubResource("BoxMesh_pxj1i")
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("2_qyv3m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-shape = SubResource("BoxShape3D_y6q8d")
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_u5xvv")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.414691, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.0446986, 0)
 visibility_parent = NodePath(".")
-mesh = SubResource("CylinderMesh_pma3n")
+mesh = ExtResource("3_uldfg")

@@ -1,10 +1,15 @@
-[gd_scene load_steps=31 format=3 uid="uid://cr206quolw2i1"]
+[gd_scene load_steps=34 format=3 uid="uid://cr206quolw2i1"]
 
 [ext_resource type="Environment" uid="uid://d3brry1orfo08" path="res://worldEnvironment.tres" id="1_dbguy"]
 [ext_resource type="PackedScene" uid="uid://n6lawv4fb7rp" path="res://scene/Planta.tscn" id="2_8dplc"]
 [ext_resource type="PackedScene" uid="uid://dwjhl01gqs0dc" path="res://scene/player.tscn" id="2_u4sqg"]
 [ext_resource type="PackedScene" uid="uid://dibahtbd5fhwd" path="res://scene/Semente.tscn" id="4_mpwu5"]
 [ext_resource type="PackedScene" uid="uid://bo8a7ieu4lsn2" path="res://scene/Vaso.tscn" id="5_xy1b8"]
+[ext_resource type="ArrayMesh" uid="uid://df6emlma4pcvj" path="res://Objeto/armario_3.obj" id="6_6w68s"]
+[ext_resource type="PackedScene" uid="uid://cb8igvjycho1y" path="res://scene/Mesa.tscn" id="7_oenw4"]
+[ext_resource type="PackedScene" uid="uid://camjx3tylkt0q" path="res://scene/Comoda.tscn" id="8_c4iev"]
+[ext_resource type="PackedScene" uid="uid://ba44isp8g1gan" path="res://scene/Abajur.tscn" id="9_16k26"]
+[ext_resource type="ArrayMesh" uid="uid://bofjfsdmik4ma" path="res://Objeto/janelaaa.obj" id="10_yir3o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1g5p"]
 albedo_color = Color(0.576471, 0.388235, 0.113725, 1)
@@ -74,14 +79,10 @@ size = Vector3(0.5, 2, 7)
 [sub_resource type="BoxShape3D" id="BoxShape3D_jda1b"]
 size = Vector3(0.5, 2, 7)
 
-[sub_resource type="SphereMesh" id="SphereMesh_2qbfc"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_0mrmi"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_y4a2y"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mkn2w"]
-points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xekbb"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123863, 0, 0)
@@ -183,39 +184,67 @@ mesh = SubResource("BoxMesh_unwnt")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 3.26)
 shape = SubResource("BoxShape3D_jda1b")
 
-[node name="ball" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.21143, 0.708203, -1.78497)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ball"]
-mesh = SubResource("SphereMesh_2qbfc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ball"]
-shape = SubResource("SphereShape3D_0mrmi")
-
 [node name="player" parent="." instance=ExtResource("2_u4sqg")]
-transform = Transform3D(0.473221, 0, 0, 0, 0.473221, 0, 0, 0, 0.473221, -2.12336, 0.474607, 2.44852)
+transform = Transform3D(0.473, 0, 0, 0, 0.473, 0, 0, 0, 0.473, -2.25728, 0.723843, 2.44852)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["grab"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39581, 0.557597, 0.966369)
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0969444, 0.14035, 1.47309)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 0.6, 0, 0, 0, 3, 0.0480433, 0.120329, -0.0382996)
 mesh = SubResource("BoxMesh_y4a2y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_mkn2w")
+transform = Transform3D(2, 0, 0, 0, 0.6, 0, 0, 0, 3, 0.0480433, 0.120329, -0.0382996)
+shape = SubResource("ConvexPolygonShape3D_xekbb")
 
 [node name="Semente" parent="." groups=["grab"] instance=ExtResource("4_mpwu5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84195, 0.486216, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9965, 0.836924, 0)
 prompt_message = "Seed"
 
-[node name="Planta1" parent="." instance=ExtResource("2_8dplc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.49273, 0.324507, -2.64492)
+[node name="Planta1" parent="." groups=["grab"] instance=ExtResource("2_8dplc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91336, 0.842577, -2.51905)
 
-[node name="Vaso" parent="." groups=["Interacteble"] instance=ExtResource("5_xy1b8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0282307, 0.324507, -2.64492)
+[node name="Vaso" parent="." groups=["Interacteble", "grab"] instance=ExtResource("5_xy1b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119464, 1.12743, -2.40894)
+disable_mode = 0
+
+[node name="Armario3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.85698, 1.19591, -2.19052)
+mesh = ExtResource("6_6w68s")
+
+[node name="Mesa2" parent="." instance=ExtResource("7_oenw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.09326, 0.65872, -2.62305)
+
+[node name="Mesa" parent="." instance=ExtResource("7_oenw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0264413, 0.777961, -2.53035)
+
+[node name="Comoda2" parent="." instance=ExtResource("8_c4iev")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.55271, 0, 2.5469)
+
+[node name="Comoda" parent="." instance=ExtResource("8_c4iev")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.3545, 0, 2.69709)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 0.6, 0, 0, 0, 3, 6.56918, 0.329163, 1.3344)
+mesh = SubResource("BoxMesh_y4a2y")
+skeleton = NodePath("../Abajur")
+
+[node name="Comoda3" parent="." instance=ExtResource("8_c4iev")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.08863, 0.150936, 2.49256)
+
+[node name="Comoda4" parent="." instance=ExtResource("8_c4iev")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.99584, 0.150936, 2.64275)
+
+[node name="Abajur2" parent="." instance=ExtResource("9_16k26")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83561, 1.09256, 2.53671)
+
+[node name="Abajur" parent="." instance=ExtResource("9_16k26")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19427, 0.941625, 2.59105)
+
+[node name="Janelaaa" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.38498e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, 2.38498e-09, 0.0155866, 0.763939, -2.95165)
+mesh = ExtResource("10_yir3o")
 
 [connection signal="interacted" from="Semente" to="Vaso" method="_on_semente_interacted"]
 [connection signal="interacted" from="Vaso" to="Planta1" method="_on_vaso_interacted"]

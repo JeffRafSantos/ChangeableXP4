@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://df6emlma4pcvj"
+path="res://.godot/imported/armario_3.obj-37cb16e2bb7d4ee1f0e238ab2bf32761.mesh"
+
+[deps]
+
+files=["res://.godot/imported/armario_3.obj-37cb16e2bb7d4ee1f0e238ab2bf32761.mesh"]
+
+source_file="res://Objeto/armario_3.obj"
+dest_files=["res://.godot/imported/armario_3.obj-37cb16e2bb7d4ee1f0e238ab2bf32761.mesh", "res://.godot/imported/armario_3.obj-37cb16e2bb7d4ee1f0e238ab2bf32761.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
