@@ -104,4 +104,3 @@ func rotate_object(event):
 			picked_object.rotation.x = (picked_object.rotation.x + (event.relative.y) * 0.005)
 			#picked_object.apply_torque(Vector3(event.relative.x,event.relative.y,0))
 			#print(event.relative, " ", picked_object.rotation)
-			pass
