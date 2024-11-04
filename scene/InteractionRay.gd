@@ -11,11 +11,13 @@ func _process(delta):
 	if is_colliding():
 		var detected = get_collider()
 		
-		if detected is Interactable:
+		if detected.is_in_group("Interacteble"):
 			$Prompt.text = detected.get_promp()
 			
 			if Input.is_action_just_pressed((detected.prompt_action)):
 				detected.interaction(owner)
+		else:
+			$Prompt.text = "*"
 	else:
-		$Prompt.text = "*"
+			$Prompt.text = "*"
 	pass

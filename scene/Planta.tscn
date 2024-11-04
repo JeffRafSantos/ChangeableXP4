@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://n6lawv4fb7rp"]
+[gd_scene load_steps=6 format=3 uid="uid://n6lawv4fb7rp"]
 
-[ext_resource type="Script" path="res://scene/Planta.gd" id="1_vja6o"]
+[ext_resource type="Script" path="res://scene/Planta.gd" id="1_33ptv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mstys"]
 
@@ -8,14 +8,21 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6q8d"]
 
-[node name="StaticBody3D" type="StaticBody3D"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_pma3n"]
+
+[node name="StaticBody3D" type="RigidBody3D" groups=["Interacteble"]]
 physics_material_override = SubResource("PhysicsMaterial_mstys")
-script = ExtResource("1_vja6o")
+script = ExtResource("1_33ptv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_pxj1i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_y6q8d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.414691, 0)
+visibility_parent = NodePath(".")
+mesh = SubResource("CylinderMesh_pma3n")

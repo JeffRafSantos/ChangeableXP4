@@ -3,8 +3,6 @@ extends CharacterBody3D
 @onready var Head = $"Head"
 @onready var Grab = $"Head/GrabRay"
 @onready var point = $"Head/Hold"
-@onready var joint = $"Head/Generic6DOFJoint3D"
-@onready var staticbody = $Head/StaticBody3D
 
 var picked_object: RigidBody3D
 var pull_power = 10
@@ -18,6 +16,7 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var sensitivity = 0.1 #sensibilidade do mouse
 
+
 func _ready():
 	#iniciar gravação do mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -30,8 +29,10 @@ func _unhandled_input(event):
 		Player_rotation(event)
 	else:
 		rotate_object(event)
-	if Input.is_action_just_pressed("inspect"):
+	
+	if Input.is_action_just_pressed("inspect") and picked_object != null:
 		locked = !locked
+	
 	if event.is_action_pressed("b_quit"):
 		#a entrada do jogador foi botão sair
 		get_tree().quit() #encerra o jogo
@@ -40,10 +41,11 @@ func _unhandled_input(event):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if picked_object == null:
 			pick_object()
-		elif picked_object != null:
+		elif picked_object != null and locked == false:
 			remove_object()
+	
 	if Input.is_action_just_pressed("b_up"):
-		pull_power = 15
+		pull_power = 20
 	else: 
 		pull_power = 10
 	pass
