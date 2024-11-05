@@ -1,0 +1,163 @@
+[gd_scene load_steps=15 format=3 uid="uid://dfrx7epcoysv1"]
+
+[ext_resource type="ArrayMesh" uid="uid://b14v08bc6kuip" path="res://Objeto/armario_corpo.obj" id="1_56clx"]
+[ext_resource type="Script" path="res://scene/Armario.gd" id="1_fp3ou"]
+[ext_resource type="ArrayMesh" uid="uid://bdwk3mmvilcmp" path="res://Objeto/armario_porta_direita.obj" id="2_w5rki"]
+[ext_resource type="ArrayMesh" uid="uid://cu2bu26vjrw6s" path="res://Objeto/armario_porta_esquerda.obj" id="3_v1eid"]
+[ext_resource type="Script" path="res://scene/Dobradiça_esquerda.gd" id="4_xjkrc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7iggu"]
+points = PackedVector3Array(-0.0158482, 0.971845, -0.615873, 0.047619, 1.03528, 0.0190476, -0.0158482, 1.03528, 0.0190476, 0.047619, -0.995675, 0.0190476, 0.111086, -0.0118156, -0.234958, -0.0158482, -0.995675, -0.615873, 0.047619, 0.971845, -0.615873, 0.047619, -0.995675, -0.615873, -0.0158482, -0.995675, 0.0190476, 0.111086, -0.0436299, -0.139683, 0.111086, 0.0832299, -0.203199, 0.047619, 1.03528, -0.330109, -0.0158482, 1.03528, -0.330109, 0.047619, 1.00366, -0.520535, -0.0158482, 1.00366, -0.520535, 0.111086, -0.0436299, -0.203199, 0.111086, 0.0514155, -0.234958)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7gr8g"]
+points = PackedVector3Array(-0.0159482, 1.03528, -0.013673, 0.047519, 0.971845, 0.621248, -0.0159482, 0.971845, 0.621248, 0.047519, -0.995675, -0.013673, -0.0159482, -0.995675, 0.621248, 0.110986, 0.0832299, 0.208574, 0.047519, -0.995675, 0.621248, -0.0159482, -0.995675, -0.013673, 0.047519, 1.03528, -0.013673, 0.110986, -0.0436299, 0.145057, 0.110986, -0.0118156, 0.240333, 0.047519, 1.03528, 0.335484, -0.0159482, 1.03528, 0.335484, 0.047519, 1.00366, 0.494214, 0.110986, -0.0436299, 0.208574, 0.110986, 0.0514155, 0.240333, -0.0159482, 1.00366, 0.494214)
+
+[sub_resource type="Animation" id="Animation_lwj3y"]
+resource_name = "Animation_Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dobradiça_esquerda:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dobradiça_direita:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p8xoc"]
+resource_name = "Animation_Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dobradiça_esquerda:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dobradiça_direita:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4khde"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dobradiça_esquerda:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dobradiça_direita:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ocq8w"]
+_data = {
+"Animation_Close": SubResource("Animation_lwj3y"),
+"Animation_Open": SubResource("Animation_p8xoc"),
+"RESET": SubResource("Animation_4khde")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lxqik"]
+animation = &"Animation_Close"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_onp15"]
+animation = &"Animation_Open"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_yat0v"]
+states/Animation_Close/node = SubResource("AnimationNodeAnimation_lxqik")
+states/Animation_Close/position = Vector2(735, 54)
+states/Animation_Open/node = SubResource("AnimationNodeAnimation_onp15")
+states/Animation_Open/position = Vector2(466, 54)
+states/End/position = Vector2(945, 54)
+states/Start/position = Vector2(288, 54)
+
+[node name="Armario" type="Node3D" groups=["Interacteble"]]
+script = ExtResource("1_fp3ou")
+
+[node name="armario_corpo" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_56clx")
+skeleton = NodePath("../Dobradiça_direita/StaticBody3D/porta_direita")
+
+[node name="Dobradiça_direita" type="Node3D" parent="."]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0, 0, -0.62357)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Dobradiça_direita"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.62357)
+
+[node name="porta_direita" type="MeshInstance3D" parent="Dobradiça_direita/StaticBody3D"]
+mesh = ExtResource("2_w5rki")
+skeleton = NodePath("../../../Dobradiça_esquerda/StaticBody3D/porta_esquerda")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dobradiça_direita/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_7iggu")
+
+[node name="Dobradiça_esquerda" type="Node3D" parent="." groups=["Interacteble"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.613721)
+script = ExtResource("4_xjkrc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Dobradiça_esquerda"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.613721)
+
+[node name="porta_esquerda" type="MeshInstance3D" parent="Dobradiça_esquerda/StaticBody3D"]
+mesh = ExtResource("3_v1eid")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Dobradiça_esquerda/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_7gr8g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ocq8w")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ocq8w")
+}
+tree_root = SubResource("AnimationNodeStateMachine_yat0v")
+anim_player = NodePath("../AnimationPlayer")
+
+[connection signal="interacted" from="Dobradiça_esquerda" to="." method="Armario_porta"]

@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+signal picked_true
+signal picked_false
+
 @onready var Head = $"Head"
 @onready var Grab = $"Head/GrabRay"
 @onready var point = $"Head/Hold"
@@ -41,6 +44,7 @@ func _unhandled_input(event):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if picked_object == null:
 			pick_object()
+			
 		elif picked_object != null and locked == false:
 			remove_object()
 	
@@ -57,7 +61,7 @@ func _process(delta):
 		var dir : Vector3 = a.direction_to(b)
 		var dist : float = a.distance_to(b) * pull_power
 		if !locked:
-			picked_object.set_freeze_enabled(false)
+			picked_object.set_freeze_enabled(true)
 			#picked_object.look_at_from_position(lerp(a,b,0.1),Head.global_position)
 			#picked_object.set_linear_velocity((b-a)*pull_power)
 			picked_object.move_and_collide((dir * dist)*delta)
@@ -66,6 +70,9 @@ func _process(delta):
 			#picked_object.position = b
 			picked_object.move_and_collide((dir * dist)*delta)
 			picked_object.set_freeze_enabled(true)
+		emit_signal("picked_true")
+	elif picked_object == null:
+		emit_signal("picked_false")
 
 func _physics_process(delta):
 	var axys = Input.get_vector("b_left", "b_right", "b_up", "b_down")
@@ -94,6 +101,7 @@ func pick_object():
 		picked_object = collider
 
 func remove_object():
+	picked_object.set_freeze_enabled(false)
 	picked_object.set_linear_velocity(Vector3(0,0.001,0))
 	picked_object = null
 
