@@ -91,7 +91,7 @@ func Player_rotation(event):
 		#rotaciona a camera no eixo x
 		Head.rotate_x(- deg_to_rad(event.relative.y * sensitivity))
 		#ajusta a rotação da camera para previnir visão invertida
-		var rotation_up = clamp(Head.rotation.x, deg_to_rad(-80), deg_to_rad(60))
+		var rotation_up = clamp(Head.rotation.x, deg_to_rad(-70), deg_to_rad(60))
 		#camera recebe o novo angulo de visão
 		Head.rotation.x = rotation_up
 

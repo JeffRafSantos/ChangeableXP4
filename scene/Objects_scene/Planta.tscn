@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://n6lawv4fb7rp"]
 
-[ext_resource type="Script" path="res://scene/Planta.gd" id="1_33ptv"]
+[ext_resource type="Script" path="res://scene/Objects_scene/Planta.gd" id="1_33ptv"]
 [ext_resource type="ArrayMesh" uid="uid://cqhbpm71fxq7e" path="res://Objeto/Vaso.obj" id="2_qyv3m"]
 [ext_resource type="ArrayMesh" uid="uid://cuykcsvgwxx7" path="res://Objeto/flor.obj" id="3_uldfg"]
 

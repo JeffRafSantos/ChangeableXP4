@@ -2,6 +2,7 @@ extends Node3D
 
 signal Open(body)
 
+@onready var timer = $Timer
 @export var prompt_message = "Interact"
 @export var prompt_action = "interact"
 
@@ -41,7 +42,7 @@ func Armario_porta():
 		elif open == false:
 			open = true
 			playback.travel("Animation_Open")
-		interactable = true
+		timer.start()
 
 
 func _picked_true():
@@ -52,3 +53,7 @@ func _picked_true():
 			open = false
 			playback.travel("Animation_Close")
 		interactable = true
+
+
+func _on_timer_timeout():
+	interactable = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bo8a7ieu4lsn2"]
 
-[ext_resource type="Script" path="res://scene/Vaso.gd" id="1_nkmji"]
+[ext_resource type="Script" path="res://scene/Objects_scene/Vaso.gd" id="1_nkmji"]
 [ext_resource type="ArrayMesh" uid="uid://cqhbpm71fxq7e" path="res://Objeto/Vaso.obj" id="2_nm463"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qv37y"]
