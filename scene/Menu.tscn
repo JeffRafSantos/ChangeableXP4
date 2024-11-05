@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://clcf2deg7mcs5"]
+[gd_scene load_steps=3 format=3 uid="uid://camlual3kp4lt"]
 
 [ext_resource type="Script" path="res://scene/Menu.gd" id="1_gwsx0"]
-[ext_resource type="FontFile" uid="uid://72qx53h8aeus" path="res://scene/XTypewriter-Regular.ttf" id="2_3rrji"]
+[ext_resource type="FontFile" path="res://scene/XTypewriter-Regular.ttf" id="2_3rrji"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

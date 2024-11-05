@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4508kiw2wvhl"]
+[gd_scene load_steps=3 format=3 uid="uid://uat6p2nx3xkr"]
 
 [ext_resource type="Script" path="res://scene/Credits.gd" id="1_qxax1"]
-[ext_resource type="FontFile" uid="uid://72qx53h8aeus" path="res://scene/XTypewriter-Regular.ttf" id="2_151ab"]
+[ext_resource type="FontFile" path="res://scene/XTypewriter-Regular.ttf" id="2_151ab"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
