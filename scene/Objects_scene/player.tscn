@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dwjhl01gqs0dc"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7xp55"]
-[ext_resource type="Script" path="res://scene/InteractionRay.gd" id="2_yeeqr"]
-[ext_resource type="Script" path="res://scene/GrabRay.gd" id="3_a6l83"]
+[ext_resource type="Script" path="res://scene/Objects_scene/InteractionRay.gd" id="2_yeeqr"]
+[ext_resource type="Script" path="res://scene/Objects_scene/GrabRay.gd" id="3_a6l83"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqhw2"]
 albedo_color = Color(0.0862745, 0.133333, 0.847059, 1)

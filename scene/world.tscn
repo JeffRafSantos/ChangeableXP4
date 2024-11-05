@@ -1,14 +1,14 @@
 [gd_scene load_steps=34 format=3 uid="uid://cr206quolw2i1"]
 
 [ext_resource type="Environment" uid="uid://d3brry1orfo08" path="res://worldEnvironment.tres" id="1_dbguy"]
-[ext_resource type="PackedScene" uid="uid://n6lawv4fb7rp" path="res://scene/Planta.tscn" id="2_8dplc"]
-[ext_resource type="PackedScene" uid="uid://dwjhl01gqs0dc" path="res://scene/player.tscn" id="2_u4sqg"]
-[ext_resource type="PackedScene" uid="uid://dibahtbd5fhwd" path="res://scene/Semente.tscn" id="4_mpwu5"]
-[ext_resource type="PackedScene" uid="uid://bo8a7ieu4lsn2" path="res://scene/Vaso.tscn" id="5_xy1b8"]
-[ext_resource type="PackedScene" uid="uid://cb8igvjycho1y" path="res://scene/Mesa.tscn" id="7_oenw4"]
-[ext_resource type="PackedScene" uid="uid://camjx3tylkt0q" path="res://scene/Comoda.tscn" id="8_c4iev"]
-[ext_resource type="PackedScene" uid="uid://ba44isp8g1gan" path="res://scene/Abajur.tscn" id="9_16k26"]
-[ext_resource type="PackedScene" uid="uid://dfrx7epcoysv1" path="res://scene/Armario.tscn" id="10_usd45"]
+[ext_resource type="PackedScene" uid="uid://n6lawv4fb7rp" path="res://scene/Objects_scene/Planta.tscn" id="2_8dplc"]
+[ext_resource type="PackedScene" uid="uid://dwjhl01gqs0dc" path="res://scene/Objects_scene/player.tscn" id="2_u4sqg"]
+[ext_resource type="PackedScene" uid="uid://dibahtbd5fhwd" path="res://scene/Objects_scene/Semente.tscn" id="4_mpwu5"]
+[ext_resource type="PackedScene" uid="uid://bo8a7ieu4lsn2" path="res://scene/Objects_scene/Vaso.tscn" id="5_xy1b8"]
+[ext_resource type="PackedScene" uid="uid://cb8igvjycho1y" path="res://scene/Objects_scene/Mesa.tscn" id="7_oenw4"]
+[ext_resource type="PackedScene" uid="uid://camjx3tylkt0q" path="res://scene/Objects_scene/Comoda.tscn" id="8_c4iev"]
+[ext_resource type="PackedScene" uid="uid://ba44isp8g1gan" path="res://scene/Objects_scene/Abajur.tscn" id="9_16k26"]
+[ext_resource type="PackedScene" uid="uid://dfrx7epcoysv1" path="res://scene/Objects_scene/Armario.tscn" id="10_usd45"]
 [ext_resource type="ArrayMesh" uid="uid://bofjfsdmik4ma" path="res://Objeto/janelaaa.obj" id="10_yir3o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1g5p"]
@@ -200,7 +200,7 @@ shape = SubResource("ConvexPolygonShape3D_xekbb")
 
 [node name="Semente" parent="." groups=["grab"] instance=ExtResource("4_mpwu5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9965, 0.836924, -0.247743)
-prompt_message = "Seed"
+prompt_message = "Pegar"
 
 [node name="Planta1" parent="." groups=["grab"] instance=ExtResource("2_8dplc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91336, 0.842577, -2.51905)
@@ -248,5 +248,3 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.6197
 [connection signal="picked_true" from="player" to="Armario" method="_picked_true"]
 [connection signal="interacted" from="Semente" to="Vaso" method="_on_semente_interacted"]
 [connection signal="interacted" from="Vaso" to="Planta1" method="_on_vaso_interacted"]
-[connection signal="Open" from="Armario" to="Armario/Dobradiça_direita" method="Open"]
-[connection signal="Open" from="Armario" to="Armario/Dobradiça_esquerda" method="Open"]

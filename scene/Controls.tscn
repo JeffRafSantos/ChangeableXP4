@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4508kiw2wvhl"]
+
+[ext_resource type="Script" path="res://scene/Credits.gd" id="1_qxax1"]
+[ext_resource type="FontFile" uid="uid://72qx53h8aeus" path="res://scene/XTypewriter-Regular.ttf" id="2_151ab"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qxax1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+offset_left = 33.0
+offset_top = 25.0
+offset_right = 157.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0.576471, 0.65098, 0.662745, 1)
+theme_override_fonts/font = ExtResource("2_151ab")
+theme_override_font_sizes/font_size = 25
+text = "Voltar"
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.87451, 0, 1)
+theme_override_fonts/font = ExtResource("2_151ab")
+theme_override_font_sizes/font_size = 30
+text = "------------------ Controles ------------------
+W - Andar Para Frente
+S - Andar Para Trás
+A - Andar Para Esquerda
+D - Andar Para Direita
+
+Mouse - Movimentação da Camera
+Botão Esquerdo Mouse - Pegar Objeto
+
+E - Interagir
+F - Inspecionar Objeto Pego
+-----------------------------------------------
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

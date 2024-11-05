@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://dfrx7epcoysv1"]
 
 [ext_resource type="ArrayMesh" uid="uid://b14v08bc6kuip" path="res://Objeto/armario_corpo.obj" id="1_56clx"]
-[ext_resource type="Script" path="res://scene/Armario.gd" id="1_fp3ou"]
+[ext_resource type="Script" path="res://scene/Objects_scene/Armario.gd" id="1_fp3ou"]
 [ext_resource type="ArrayMesh" uid="uid://bdwk3mmvilcmp" path="res://Objeto/armario_porta_direita.obj" id="2_w5rki"]
-[ext_resource type="Script" path="res://scene/Dobradiça_direita.gd" id="3_l08pv"]
+[ext_resource type="Script" path="res://scene/Objects_scene/Dobradiça_direita.gd" id="3_l08pv"]
 [ext_resource type="ArrayMesh" uid="uid://cu2bu26vjrw6s" path="res://Objeto/armario_porta_esquerda.obj" id="3_v1eid"]
-[ext_resource type="Script" path="res://scene/Dobradiça_esquerda.gd" id="4_xjkrc"]
+[ext_resource type="Script" path="res://scene/Objects_scene/Dobradiça_esquerda.gd" id="4_xjkrc"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7iggu"]
 points = PackedVector3Array(-0.0158482, 0.971845, -0.615873, 0.047619, 1.03528, 0.0190476, -0.0158482, 1.03528, 0.0190476, 0.047619, -0.995675, 0.0190476, 0.111086, -0.0118156, -0.234958, -0.0158482, -0.995675, -0.615873, 0.047619, 0.971845, -0.615873, 0.047619, -0.995675, -0.615873, -0.0158482, -0.995675, 0.0190476, 0.111086, -0.0436299, -0.139683, 0.111086, 0.0832299, -0.203199, 0.047619, 1.03528, -0.330109, -0.0158482, 1.03528, -0.330109, 0.047619, 1.00366, -0.520535, -0.0158482, 1.00366, -0.520535, 0.111086, -0.0436299, -0.203199, 0.111086, 0.0514155, -0.234958)
@@ -162,7 +162,10 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_yat0v")
 anim_player = NodePath("../AnimationPlayer")
 
-[connection signal="Open" from="." to="Dobradiça_esquerda" method="Open"]
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="Open" from="." to="Dobradiça_direita" method="Open"]
+[connection signal="Open" from="." to="Dobradiça_esquerda" method="Open"]
 [connection signal="interacted" from="Dobradiça_direita" to="." method="Armario_porta"]
 [connection signal="interacted" from="Dobradiça_esquerda" to="." method="Armario_porta"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dibahtbd5fhwd"]
 
-[ext_resource type="Script" path="res://scene/Semente.gd" id="1_5c1s7"]
+[ext_resource type="Script" path="res://scene/Objects_scene/Semente.gd" id="1_5c1s7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uiqg6"]
 
