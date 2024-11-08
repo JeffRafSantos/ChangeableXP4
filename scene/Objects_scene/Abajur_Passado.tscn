@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba44isp8g1gan"]
+[gd_scene load_steps=3 format=3 uid="uid://ts8mh0sy708d"]
 
-[ext_resource type="ArrayMesh" uid="uid://dx88gx23u7e1c" path="res://Objeto/abajur_rosa.obj" id="1_vkbce"]
+[ext_resource type="PackedScene" uid="uid://b5qxutxfm3whj" path="res://Texture/abajur_passado.glb" id="1_hblkc"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_34l3a"]
 height = 0.558059
@@ -8,10 +8,9 @@ radius = 0.193299
 
 [node name="Abajur" type="RigidBody3D" groups=["grab"]]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.169102, 0)
-mesh = ExtResource("1_vkbce")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000267267, 0.107918, -0.000206232)
 shape = SubResource("CylinderShape3D_34l3a")
+
+[node name="abajur_passado" parent="." instance=ExtResource("1_hblkc")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.169801, 0)

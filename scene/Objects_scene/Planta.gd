@@ -8,7 +8,7 @@ signal  interacted(body)
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
-	$MeshInstance3D2.visible = false
+	$flor1.visible = false
 	pass # Replace with function body.
 
 
@@ -30,4 +30,4 @@ func _process(delta):
 
 func _on_vaso_interacted(body):
 		print("visivel")
-		$MeshInstance3D2.visible = true
+		$flor1.visible = true

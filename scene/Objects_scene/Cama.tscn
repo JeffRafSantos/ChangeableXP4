@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://btqympuf6r7xp"]
+
+[ext_resource type="PackedScene" uid="uid://dtji1d20atems" path="res://Texture/cama_presente.glb" id="1_sencs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n46q6"]
+size = Vector3(2.50735, 0.792847, 1.98584)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcmmg"]
+size = Vector3(0.167419, 1.39441, 1.99365)
+
+[node name="Cama_Presente" type="StaticBody3D"]
+
+[node name="cama_passado (1)" parent="." instance=ExtResource("1_sencs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.807418, 0.507253, 2.50086)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323944, -0.103577, 0.0227051)
+shape = SubResource("BoxShape3D_n46q6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21493, 0.197205, 0.0187988)
+shape = SubResource("BoxShape3D_hcmmg")

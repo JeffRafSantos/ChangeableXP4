@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cr206quolw2i1"]
+[gd_scene load_steps=38 format=3 uid="uid://cr206quolw2i1"]
 
 [ext_resource type="Environment" uid="uid://d3brry1orfo08" path="res://worldEnvironment.tres" id="1_dbguy"]
 [ext_resource type="PackedScene" uid="uid://n6lawv4fb7rp" path="res://scene/Objects_scene/Planta.tscn" id="2_8dplc"]
@@ -7,9 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://bo8a7ieu4lsn2" path="res://scene/Objects_scene/Vaso.tscn" id="5_xy1b8"]
 [ext_resource type="PackedScene" uid="uid://cb8igvjycho1y" path="res://scene/Objects_scene/Mesa.tscn" id="7_oenw4"]
 [ext_resource type="PackedScene" uid="uid://camjx3tylkt0q" path="res://scene/Objects_scene/Comoda.tscn" id="8_c4iev"]
-[ext_resource type="PackedScene" uid="uid://ba44isp8g1gan" path="res://scene/Objects_scene/Abajur.tscn" id="9_16k26"]
+[ext_resource type="PackedScene" uid="uid://ba44isp8g1gan" path="res://scene/Objects_scene/Abajur_Presente.tscn" id="9_16k26"]
 [ext_resource type="PackedScene" uid="uid://dfrx7epcoysv1" path="res://scene/Objects_scene/Armario.tscn" id="10_usd45"]
 [ext_resource type="ArrayMesh" uid="uid://bofjfsdmik4ma" path="res://Objeto/janelaaa.obj" id="10_yir3o"]
+[ext_resource type="PackedScene" uid="uid://1p0gveaucd5b" path="res://scene/Objects_scene/livros.tscn" id="11_qa2vl"]
+[ext_resource type="PackedScene" uid="uid://13p4t31oim7y" path="res://scene/Objects_scene/livro_vermelho.tscn" id="12_3c8wk"]
+[ext_resource type="PackedScene" uid="uid://5yftb1dcj7tm" path="res://scene/Objects_scene/livro_amarelo.tscn" id="13_ig04x"]
+[ext_resource type="PackedScene" uid="uid://btqympuf6r7xp" path="res://scene/Objects_scene/Cama.tscn" id="14_ghngl"]
+[ext_resource type="PackedScene" uid="uid://dukqcywa37hew" path="res://scene/Objects_scene/cama_passado.tscn" id="15_5kvma"]
+[ext_resource type="PackedScene" uid="uid://bo6rlow03ekrx" path="res://scene/Objects_scene/caneta.tscn" id="15_77uok"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1g5p"]
 albedo_color = Color(0.576471, 0.388235, 0.113725, 1)
@@ -78,11 +84,6 @@ size = Vector3(0.5, 2, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jda1b"]
 size = Vector3(0.5, 2, 7)
-
-[sub_resource type="BoxMesh" id="BoxMesh_y4a2y"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xekbb"]
-points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123863, 0, 0)
@@ -187,26 +188,15 @@ shape = SubResource("BoxShape3D_jda1b")
 [node name="player" parent="." instance=ExtResource("2_u4sqg")]
 transform = Transform3D(0.473, 0, 0, 0, 0.473, 0, 0, 0, 0.473, -2.25728, 0.723843, 2.44852)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0969444, 0.14035, 1.47309)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(2, 0, 0, 0, 0.6, 0, 0, 0, 3, 0.0583945, 0.197237, 0.018095)
-mesh = SubResource("BoxMesh_y4a2y")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(2, 0, 0, 0, 0.6, 0, 0, 0, 3, 0.0480433, 0.120329, -0.0382996)
-shape = SubResource("ConvexPolygonShape3D_xekbb")
-
 [node name="Semente" parent="." groups=["grab"] instance=ExtResource("4_mpwu5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9965, 0.836924, -0.247743)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89545, 0.978719, 2.30945)
 prompt_message = "Pegar"
 
 [node name="Planta1" parent="." groups=["grab"] instance=ExtResource("2_8dplc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91336, 0.842577, -2.51905)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91336, 0.72257, -2.51905)
 
 [node name="Vaso" parent="." groups=["Interacteble", "grab"] instance=ExtResource("5_xy1b8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119464, 1.12743, -2.46154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119464, 0.848261, -2.46154)
 disable_mode = 0
 
 [node name="Mesa2" parent="." instance=ExtResource("7_oenw4")]
@@ -221,13 +211,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.552
 [node name="Comoda" parent="." instance=ExtResource("8_c4iev")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.3545, 0, 2.69709)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 0.6, 0, 0, 0, 3, 6.56918, 0.329163, 1.3344)
-mesh = SubResource("BoxMesh_y4a2y")
-skeleton = NodePath("../Abajur")
-
 [node name="Comoda3" parent="." instance=ExtResource("8_c4iev")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.08863, 0.150936, 2.49256)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.08863, 0.150936, 2.57152)
 
 [node name="Comoda4" parent="." instance=ExtResource("8_c4iev")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.99584, 0.150936, 2.64275)
@@ -244,6 +229,24 @@ mesh = ExtResource("10_yir3o")
 
 [node name="Armario" parent="." instance=ExtResource("10_usd45")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.61971, 1.07309, -2.25662)
+
+[node name="livros" parent="." instance=ExtResource("11_qa2vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.477173, 0.862083, -2.46454)
+
+[node name="livro_vermelho" parent="." instance=ExtResource("12_3c8wk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.478414, 0.908373, -2.49551)
+
+[node name="livro_amarelo" parent="." instance=ExtResource("13_ig04x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.478, 0.96471, -2.496)
+
+[node name="Cama" parent="." instance=ExtResource("14_ghngl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.127778, 0.462942, 1.71071)
+
+[node name="cama_passado" parent="." instance=ExtResource("15_5kvma")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.54328, 0.463668, 1.71064)
+
+[node name="caneta" parent="." instance=ExtResource("15_77uok")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.51628, 0.839293, -2.46522)
 
 [connection signal="picked_true" from="player" to="Armario" method="_picked_true"]
 [connection signal="interacted" from="Semente" to="Vaso" method="_on_semente_interacted"]

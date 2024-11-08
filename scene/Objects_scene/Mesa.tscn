@@ -1,17 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://cb8igvjycho1y"]
 
-[ext_resource type="ArrayMesh" uid="uid://ch4e7weplqvj3" path="res://Objeto/mesa3.obj" id="1_wivo2"]
+[ext_resource type="PackedScene" uid="uid://c6uoa0px6c3yw" path="res://Texture/mesa4.glb" id="1_ibpx7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lv21a"]
-size = Vector3(1.37894, 0.813057, 0.736816)
+size = Vector3(1.6211, 0.813057, 0.772705)
 
 [node name="Mesa" type="StaticBody3D"]
 disable_mode = 1
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-mesh = ExtResource("1_wivo2")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00917067, -0.345196, 0.0163574)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0040489, -0.345196, -0.00158703)
 shape = SubResource("BoxShape3D_lv21a")
+
+[node name="mesa4" parent="." instance=ExtResource("1_ibpx7")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
