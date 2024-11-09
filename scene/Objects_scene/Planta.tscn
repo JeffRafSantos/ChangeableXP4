@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://n6lawv4fb7rp"]
 
 [ext_resource type="Script" path="res://scene/Objects_scene/Planta.gd" id="1_33ptv"]
-[ext_resource type="ArrayMesh" uid="uid://cqhbpm71fxq7e" path="res://Objeto/Vaso.obj" id="2_qyv3m"]
+[ext_resource type="PackedScene" path="res://Texture/vaso2presente.glb" id="3_6r53x"]
 [ext_resource type="PackedScene" uid="uid://b4c74cugs03ht" path="res://Texture/flor1.glb" id="4_rf2oq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mstys"]
@@ -14,13 +14,12 @@ radius = 0.142304
 physics_material_override = SubResource("PhysicsMaterial_mstys")
 script = ExtResource("1_33ptv")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-mesh = ExtResource("2_qyv3m")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10193, 0)
 shape = SubResource("CylinderShape3D_26nj5")
 
 [node name="flor1" parent="." instance=ExtResource("4_rf2oq")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.390869, 0.0434943, 0)
+
+[node name="vaso2presente" parent="." instance=ExtResource("3_6r53x")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

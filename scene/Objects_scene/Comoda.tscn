@@ -1,16 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://camjx3tylkt0q"]
 
-[ext_resource type="ArrayMesh" uid="uid://b5t1ogtg4uamo" path="res://Objeto/comoda.obj" id="1_qh7p5"]
+[ext_resource type="PackedScene" uid="uid://w6ek3ufv68ml" path="res://Texture/comoda.glb" id="1_jej4n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ae1i7"]
 size = Vector3(0.746155, 0.742004, 0.750351)
 
 [node name="Comoda" type="StaticBody3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
-mesh = ExtResource("1_qh7p5")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00497437, 0.377425, 0.00345612)
 shape = SubResource("BoxShape3D_ae1i7")
+
+[node name="comoda" parent="." instance=ExtResource("1_jej4n")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)

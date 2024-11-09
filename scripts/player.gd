@@ -64,12 +64,11 @@ func _process(delta):
 			picked_object.set_freeze_enabled(true)
 			#picked_object.look_at_from_position(lerp(a,b,0.1),Head.global_position)
 			#picked_object.set_linear_velocity((b-a)*pull_power)
-			picked_object.move_and_collide((dir * dist)*delta)
+			picked_object.move_and_collide((dir * dist) * delta)
 			picked_object.look_at(self.global_position)
 		else:
 			#picked_object.position = b
 			picked_object.move_and_collide((dir * dist)*delta)
-			picked_object.set_freeze_enabled(true)
 		emit_signal("picked_true")
 	elif picked_object == null:
 		emit_signal("picked_false")
@@ -82,7 +81,6 @@ func _physics_process(delta):
 	if !locked:
 		velocity = vector_final + Vector3(0, velocity.y, 0)
 		move_and_slide()
-	pass
 
 func Player_rotation(event):
 	if event is InputEventMouseMotion:

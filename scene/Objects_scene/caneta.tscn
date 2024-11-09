@@ -83,7 +83,7 @@ shadow_mesh = SubResource("ArrayMesh_eb7yn")
 height = 0.194526
 radius = 0.0134898
 
-[node name="caneta" type="RigidBody3D"]
+[node name="caneta" type="RigidBody3D" groups=["grab"]]
 
 [node name="Circle" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.141288, 0, 0, 0, 0.141288, 0, 0, 0, 0.141288, 0, 0, 0)

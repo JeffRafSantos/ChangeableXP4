@@ -1,11 +1,18 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://d3brry1orfo08"]
+[gd_resource type="Environment" load_steps=5 format=3 uid="uid://d3brry1orfo08"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f52r2"]
+[sub_resource type="Gradient" id="Gradient_da6kg"]
+colors = PackedColorArray(0.0470588, 0.0470588, 0.521569, 1, 0.0235294, 0.0235294, 0.0235294, 1)
 
-[sub_resource type="Sky" id="Sky_exp7e"]
-sky_material = SubResource("ProceduralSkyMaterial_f52r2")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p6fml"]
+gradient = SubResource("Gradient_da6kg")
+fill_from = Vector2(1, 0.662393)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vwr7f"]
+night_sky = SubResource("GradientTexture2D_p6fml")
+
+[sub_resource type="Sky" id="Sky_u5nrb"]
+sky_material = SubResource("PhysicalSkyMaterial_vwr7f")
 
 [resource]
 background_mode = 2
-background_energy_multiplier = 1.16
-sky = SubResource("Sky_exp7e")
+sky = SubResource("Sky_u5nrb")
