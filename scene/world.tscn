@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://camjx3tylkt0q" path="res://scene/Objects_scene/Comoda.tscn" id="8_c4iev"]
 [ext_resource type="PackedScene" uid="uid://ba44isp8g1gan" path="res://scene/Objects_scene/Abajur_Presente.tscn" id="9_16k26"]
 [ext_resource type="PackedScene" uid="uid://dfrx7epcoysv1" path="res://scene/Objects_scene/Armario.tscn" id="10_usd45"]
-[ext_resource type="ArrayMesh" uid="uid://bofjfsdmik4ma" path="res://Objeto/janelaaa.obj" id="10_yir3o"]
 [ext_resource type="PackedScene" uid="uid://1p0gveaucd5b" path="res://scene/Objects_scene/livros.tscn" id="11_qa2vl"]
 [ext_resource type="PackedScene" uid="uid://13p4t31oim7y" path="res://scene/Objects_scene/livro_vermelho.tscn" id="12_3c8wk"]
 [ext_resource type="PackedScene" uid="uid://5yftb1dcj7tm" path="res://scene/Objects_scene/livro_amarelo.tscn" id="13_ig04x"]
 [ext_resource type="PackedScene" uid="uid://btqympuf6r7xp" path="res://scene/Objects_scene/Cama.tscn" id="14_ghngl"]
 [ext_resource type="PackedScene" uid="uid://dukqcywa37hew" path="res://scene/Objects_scene/cama_passado.tscn" id="15_5kvma"]
 [ext_resource type="PackedScene" uid="uid://bo6rlow03ekrx" path="res://scene/Objects_scene/caneta.tscn" id="15_77uok"]
+[ext_resource type="PackedScene" uid="uid://bw6evi2175rb6" path="res://cenas novas objetos/janela.tscn" id="16_c4owk"]
 [ext_resource type="PackedScene" uid="uid://caiv40wj1hqe6" path="res://scene/Objects_scene/Cadeira.tscn" id="17_buxsk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1g5p"]
@@ -125,7 +125,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.253, 1, 1.0091)
 shape = SubResource("BoxShape3D_13k6u")
 
 [node name="wallFront" type="MeshInstance3D" parent="wall"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, -3.253)
+transform = Transform3D(-1.50101e-08, 0, -1, 0, 0.482279, 0, 0.343392, 0, -4.37114e-08, 0, 0.374894, -3.09048)
+mesh = SubResource("BoxMesh_daf5s")
+
+[node name="wallFront2" type="MeshInstance3D" parent="wall"]
+transform = Transform3D(-1.50101e-08, 0, -0.402575, 0, 0.570705, 0, 0.343392, 0, -1.75971e-08, 2.14291, 1.37919, -3.09048)
+mesh = SubResource("BoxMesh_daf5s")
+
+[node name="wallFront3" type="MeshInstance3D" parent="wall"]
+transform = Transform3D(-1.50101e-08, 0, -0.402575, 0, 0.570705, 0, 0.343392, 0, -1.75971e-08, -2.11387, 1.37919, -3.09048)
 mesh = SubResource("BoxMesh_daf5s")
 
 [node name="collisionWF" type="CollisionShape3D" parent="wall"]
@@ -219,10 +227,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83561, 1.09256, 2.53671)
 [node name="Abajur" parent="." instance=ExtResource("9_16k26")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19427, 0.941625, 2.59105)
 
-[node name="Janelaaa" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.38498e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, 2.38498e-09, 0.0155866, 0.763939, -2.95165)
-mesh = ExtResource("10_yir3o")
-
 [node name="Armario" parent="." instance=ExtResource("10_usd45")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.61971, 1.07309, -2.25662)
 
@@ -244,11 +248,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.5432
 [node name="caneta" parent="." instance=ExtResource("15_77uok")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.51628, 0.839293, -2.46522)
 
+[node name="janela2" parent="." instance=ExtResource("16_c4owk")]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 0.0146824, 0.775743, -2.99361)
+
 [node name="Cadeira" parent="." instance=ExtResource("17_buxsk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84584, 0.37902, -1.57685)
 
 [connection signal="picked_true" from="player" to="Armario" method="_picked_true"]
 [connection signal="interacted" from="Semente" to="Vaso" method="_on_semente_interacted"]
 [connection signal="interacted" from="Vaso" to="Planta1" method="_on_vaso_interacted"]
-[connection signal="Open" from="Armario" to="Armario/Dobradiça_direita" method="Open"]
-[connection signal="Open" from="Armario" to="Armario/Dobradiça_esquerda" method="Open"]

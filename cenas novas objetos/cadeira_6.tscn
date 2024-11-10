@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvb0x3a2b4ml7"]
+
+[ext_resource type="PackedScene" uid="uid://cyk5tnpfyb0mh" path="res://Texture/cadeira6.glb" id="1_yo8tf"]
+[ext_resource type="Material" uid="uid://d0rcrv35nhtss" path="res://Materials/cadeira.tres" id="2_24elx"]
+
+[node name="cadeira6" instance=ExtResource("1_yo8tf")]
+
+[node name="Cube_005" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_24elx")
+
+[node name="Cube_006" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_24elx")
+
+[node name="Cube_007" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_24elx")
+
+[node name="Cube_008" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_24elx")
+
+[node name="Cube_009" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_24elx")
+
+[node name="Cube_004" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_24elx")

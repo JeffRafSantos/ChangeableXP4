@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b76qgtv8f18mm"]
+
+[ext_resource type="Shader" path="res://Shaders/cel-shader-reflection.gdshader" id="1_ko3wp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nffnt"]
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_nffnt")
+shader = ExtResource("1_ko3wp")
+shader_parameter/metallic = 0.132
+shader_parameter/roughness = 0.0
+shader_parameter/color = Color(0.643137, 0.560784, 0.160784, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://btqympuf6r7xp"]
 
-[ext_resource type="PackedScene" uid="uid://dtji1d20atems" path="res://Texture/cama_presente.glb" id="1_sencs"]
+[ext_resource type="PackedScene" uid="uid://glo4cpgohdho" path="res://cenas novas objetos/cama_presente.tscn" id="1_q4nlb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n46q6"]
 size = Vector3(2.50735, 0.792847, 1.98584)
@@ -10,7 +10,7 @@ size = Vector3(0.167419, 1.39441, 1.99365)
 
 [node name="Cama_Presente" type="StaticBody3D"]
 
-[node name="cama_passado (1)" parent="." instance=ExtResource("1_sencs")]
+[node name="cama_presente" parent="." instance=ExtResource("1_q4nlb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.807418, 0.507253, 2.50086)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

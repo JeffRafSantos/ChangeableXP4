@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bdbcdyvldjn5h"]
+
+[ext_resource type="Shader" path="res://Shaders/cel-shader-refraction.gdshader" id="1_7cst4"]
+[ext_resource type="Texture2D" uid="uid://bhtkr88uwwjvk" path="res://Texture/mesa4_macaneta.png" id="2_1q13i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nffnt"]
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_nffnt")
+shader = ExtResource("1_7cst4")
+shader_parameter/metallic = 0.103
+shader_parameter/roughness = 0.0
+shader_parameter/refraction = 0.00500076
+shader_parameter/blurriness = 0.207
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/base_texture = ExtResource("2_1q13i")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

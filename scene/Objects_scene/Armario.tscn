@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://dfrx7epcoysv1"]
 
 [ext_resource type="Script" path="res://scene/Objects_scene/Armario.gd" id="1_fp3ou"]
-[ext_resource type="PackedScene" uid="uid://c5kujg0ir6q7x" path="res://Texture/corpo_armario.glb" id="2_numua"]
+[ext_resource type="PackedScene" uid="uid://csokxxoe8vi3l" path="res://cenas novas objetos/corpo_armario.tscn" id="2_jd8qx"]
 [ext_resource type="Script" path="res://scene/Objects_scene/Dobradiça_direita.gd" id="3_l08pv"]
-[ext_resource type="PackedScene" uid="uid://sg6tkhvk652s" path="res://Texture/porta_armario4.glb" id="4_ekh5p"]
+[ext_resource type="PackedScene" uid="uid://cxxo88boi248t" path="res://cenas novas objetos/porta_armario_4.tscn" id="4_8u8n5"]
 [ext_resource type="Script" path="res://scene/Objects_scene/Dobradiça_esquerda.gd" id="4_xjkrc"]
-[ext_resource type="PackedScene" uid="uid://bn3wnd5rspg3" path="res://Texture/porta_armario01.glb" id="6_dsicl"]
+[ext_resource type="PackedScene" uid="uid://cwwg24r2od88q" path="res://cenas novas objetos/porta_armario_01.tscn" id="6_10huo"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7iggu"]
 points = PackedVector3Array(-0.0158482, 0.971845, -0.615873, 0.047619, 1.03528, 0.0190476, -0.0158482, 1.03528, 0.0190476, 0.047619, -0.995675, 0.0190476, 0.111086, -0.0118156, -0.234958, -0.0158482, -0.995675, -0.615873, 0.047619, 0.971845, -0.615873, 0.047619, -0.995675, -0.615873, -0.0158482, -0.995675, 0.0190476, 0.111086, -0.0436299, -0.139683, 0.111086, 0.0832299, -0.203199, 0.047619, 1.03528, -0.330109, -0.0158482, 1.03528, -0.330109, 0.047619, 1.00366, -0.520535, -0.0158482, 1.00366, -0.520535, 0.111086, -0.0436299, -0.203199, 0.111086, 0.0514155, -0.234958)
@@ -118,7 +118,7 @@ states/Start/position = Vector2(288, 54)
 [node name="Armario" type="Node3D" groups=["Interacteble"]]
 script = ExtResource("1_fp3ou")
 
-[node name="corpo_armario" parent="." instance=ExtResource("2_numua")]
+[node name="corpo_armario" parent="." instance=ExtResource("2_jd8qx")]
 
 [node name="Dobradiça_direita" type="StaticBody3D" parent="." groups=["Interacteble"]]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0, 0, -0.62357)
@@ -129,7 +129,7 @@ open = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.62357)
 shape = SubResource("ConvexPolygonShape3D_7iggu")
 
-[node name="porta_armario4" parent="Dobradiça_direita" instance=ExtResource("4_ekh5p")]
+[node name="porta_armario4" parent="Dobradiça_direita" instance=ExtResource("4_8u8n5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103072, 0, 0.628861)
 
 [node name="Dobradiça_esquerda" type="StaticBody3D" parent="." groups=["Interacteble"]]
@@ -141,7 +141,7 @@ open = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.613721)
 shape = SubResource("ConvexPolygonShape3D_7gr8g")
 
-[node name="porta_armario01" parent="Dobradiça_esquerda" instance=ExtResource("6_dsicl")]
+[node name="porta_armario01" parent="Dobradiça_esquerda" instance=ExtResource("6_10huo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.613721)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwmc7ltwkf51"]
+
+[ext_resource type="PackedScene" uid="uid://nwx1jt5eyrbt" path="res://Texture/abajur_presente.glb" id="1_acp6b"]
+[ext_resource type="Material" uid="uid://dv80fnl1jpy2u" path="res://Materials/abajur/presente/cabeça_abajur.tres" id="2_63fpn"]
+[ext_resource type="Material" uid="uid://df0qhhsgra7vc" path="res://Materials/abajur/presente/luz_presente.tres" id="3_enaki"]
+[ext_resource type="Material" uid="uid://cu0seohononx3" path="res://Materials/abajur/presente/tronco_abajur.tres" id="4_evjn7"]
+
+[node name="abajur_presente" instance=ExtResource("1_acp6b")]
+
+[node name="cabeça_abajur_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_63fpn")
+
+[node name="luz_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_enaki")
+
+[node name="tronco_001" parent="." index="2"]
+surface_material_override/0 = ExtResource("4_evjn7")
