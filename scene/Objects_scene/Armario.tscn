@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfrx7epcoysv1"]
+[gd_scene load_steps=17 format=3 uid="uid://dfrx7epcoysv1"]
 
 [ext_resource type="Script" path="res://scene/Objects_scene/Armario.gd" id="1_fp3ou"]
 [ext_resource type="PackedScene" uid="uid://csokxxoe8vi3l" path="res://cenas novas objetos/corpo_armario.tscn" id="2_jd8qx"]
@@ -115,13 +115,16 @@ states/Animation_Open/position = Vector2(466, 54)
 states/End/position = Vector2(945, 54)
 states/Start/position = Vector2(288, 54)
 
-[node name="Armario" type="Node3D" groups=["Interacteble"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0fwfy"]
+size = Vector3(0.76416, 1.99664, 0.0984802)
+
+[node name="Armario" type="StaticBody3D" groups=["Interacteble"]]
 script = ExtResource("1_fp3ou")
 
 [node name="corpo_armario" parent="." instance=ExtResource("2_jd8qx")]
 
 [node name="Dobradiça_direita" type="StaticBody3D" parent="." groups=["Interacteble"]]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0, 0, -0.62357)
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, -0.0241219, 0, -0.62357)
 script = ExtResource("3_l08pv")
 open = true
 
@@ -133,7 +136,7 @@ shape = SubResource("ConvexPolygonShape3D_7iggu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103072, 0, 0.628861)
 
 [node name="Dobradiça_esquerda" type="StaticBody3D" parent="." groups=["Interacteble"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.613721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020937, 0, 0.613721)
 script = ExtResource("4_xjkrc")
 open = true
 
@@ -157,6 +160,14 @@ tree_root = SubResource("AnimationNodeStateMachine_yat0v")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.408911, -0.0782776, 0.61352)
+shape = SubResource("BoxShape3D_0fwfy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.408911, -0.0782776, -0.614595)
+shape = SubResource("BoxShape3D_0fwfy")
 
 [connection signal="Open" from="." to="Dobradiça_direita" method="Open"]
 [connection signal="Open" from="." to="Dobradiça_esquerda" method="Open"]

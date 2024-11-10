@@ -57,3 +57,4 @@ func _picked_true():
 
 func _on_timer_timeout():
 	interactable = true
+

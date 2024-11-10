@@ -117,11 +117,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.276, 1, 0)
 shape = SubResource("BoxShape3D_x82mq")
 
 [node name="wallRight" type="MeshInstance3D" parent="wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.253, 1, 1.0091)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.253, 1, 0.796033)
 mesh = SubResource("BoxMesh_uv10x")
 
 [node name="collisionWR" type="CollisionShape3D" parent="wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.253, 1, 1.0091)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.253, 1, 0.796033)
 shape = SubResource("BoxShape3D_13k6u")
 
 [node name="wallFront" type="MeshInstance3D" parent="wall"]
@@ -227,8 +227,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83561, 1.09256, 2.53671)
 [node name="Abajur" parent="." instance=ExtResource("9_16k26")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19427, 0.941625, 2.59105)
 
+[node name="Armario2" parent="." instance=ExtResource("10_usd45")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 3.92771, 1.07212, -2.37045)
+
 [node name="Armario" parent="." instance=ExtResource("10_usd45")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.61971, 1.07309, -2.25662)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.56657, 1.07309, -2.37147)
 
 [node name="livros" parent="." instance=ExtResource("11_qa2vl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.477173, 0.862083, -2.46454)
@@ -254,6 +257,11 @@ transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 
 [node name="Cadeira" parent="." instance=ExtResource("17_buxsk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84584, 0.37902, -1.57685)
 
+[connection signal="picked_true" from="player" to="Armario2" method="_picked_true"]
 [connection signal="picked_true" from="player" to="Armario" method="_picked_true"]
 [connection signal="interacted" from="Semente" to="Vaso" method="_on_semente_interacted"]
 [connection signal="interacted" from="Vaso" to="Planta1" method="_on_vaso_interacted"]
+[connection signal="Open" from="Armario2" to="Armario2/Dobradiça_direita" method="Open"]
+[connection signal="Open" from="Armario2" to="Armario2/Dobradiça_esquerda" method="Open"]
+[connection signal="Open" from="Armario" to="Armario/Dobradiça_direita" method="Open"]
+[connection signal="Open" from="Armario" to="Armario/Dobradiça_esquerda" method="Open"]
