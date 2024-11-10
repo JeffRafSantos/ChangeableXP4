@@ -250,5 +250,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84584, 0.37902, -1.57685)
 [connection signal="picked_true" from="player" to="Armario" method="_picked_true"]
 [connection signal="interacted" from="Semente" to="Vaso" method="_on_semente_interacted"]
 [connection signal="interacted" from="Vaso" to="Planta1" method="_on_vaso_interacted"]
-[connection signal="Open" from="Armario" to="Armario/Dobradiça_direita" method="Open"]
-[connection signal="Open" from="Armario" to="Armario/Dobradiça_esquerda" method="Open"]
