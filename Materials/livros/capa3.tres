@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://be8giagqum7id"]
+
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="1_so7uc"]
+[ext_resource type="Shader" path="res://Shaders/cel-shader-base.gdshader" id="2_o613s"]
+[ext_resource type="Texture2D" uid="uid://bmgdackasrm25" path="res://Texture/livro_amarelo_istockphoto-95001144-612x612.png" id="3_5axqt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgejc"]
+render_priority = 0
+shader = ExtResource("1_so7uc")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_pgejc")
+shader = ExtResource("2_o613s")
+shader_parameter/color = Color(0.807843, 0.807843, 0.807843, 1)
+shader_parameter/specular = Color(0, 0, 0, 0.407843)
+shader_parameter/fresnel = Color(0.0196078, 0.0196078, 0.0196078, 0.301961)
+shader_parameter/base_texture = ExtResource("3_5axqt")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

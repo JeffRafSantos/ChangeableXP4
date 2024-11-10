@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://q2uf0jbanuox"]
+
+[ext_resource type="PackedScene" uid="uid://c6uoa0px6c3yw" path="res://Texture/mesa4.glb" id="1_px2yp"]
+[ext_resource type="Material" uid="uid://dniofpcn6tes4" path="res://Materials/mesa/mesita.tres" id="2_tlrjl"]
+[ext_resource type="Material" uid="uid://b4mbrgvn20c2g" path="res://Materials/mesa/mesita_pernitas.tres" id="3_0l2v3"]
+[ext_resource type="Material" uid="uid://duq5ldg0n8k0b" path="res://Materials/mesa/mesita_embaixo.tres" id="4_pvnsn"]
+[ext_resource type="Material" uid="uid://h6wg2jnme5lf" path="res://Materials/mesa/mesita_gaveta.tres" id="5_2osmh"]
+[ext_resource type="Material" uid="uid://bdbcdyvldjn5h" path="res://Materials/mesa/handle_gaveta.tres" id="6_qns0j"]
+
+[node name="mesa4" instance=ExtResource("1_px2yp")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_tlrjl")
+
+[node name="Cube_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_0l2v3")
+
+[node name="Plane" parent="." index="2"]
+surface_material_override/0 = ExtResource("4_pvnsn")
+
+[node name="Plane_001" parent="." index="3"]
+surface_material_override/0 = ExtResource("5_2osmh")
+
+[node name="Circle" parent="." index="4"]
+surface_material_override/0 = ExtResource("6_qns0j")

@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://d0rcrv35nhtss"]
+
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="1_1nshd"]
+[ext_resource type="Shader" path="res://Shaders/cel-shader-base.gdshader" id="2_mktem"]
+[ext_resource type="Texture2D" uid="uid://couhfgxusf20" path="res://Texture/cadeira6_madeira.png" id="3_pbhy3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgejc"]
+render_priority = 0
+shader = ExtResource("1_1nshd")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_pgejc")
+shader = ExtResource("2_mktem")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/specular = Color(0, 0, 0, 0.407843)
+shader_parameter/fresnel = Color(0.0196078, 0.0196078, 0.0196078, 0.301961)
+shader_parameter/base_texture = ExtResource("3_pbhy3")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

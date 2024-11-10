@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://csokxxoe8vi3l"]
+
+[ext_resource type="PackedScene" uid="uid://c5kujg0ir6q7x" path="res://Texture/corpo_armario.glb" id="1_jb0sk"]
+[ext_resource type="Material" uid="uid://dhs70uj3vwrbf" path="res://Materials/armario.tres" id="2_ih212"]
+
+[node name="corpo_armario" instance=ExtResource("1_jb0sk")]
+
+[node name="armario" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ih212")

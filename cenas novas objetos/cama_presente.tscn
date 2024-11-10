@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://glo4cpgohdho"]
+
+[ext_resource type="PackedScene" uid="uid://dtji1d20atems" path="res://Texture/cama_presente.glb" id="1_7c0rj"]
+[ext_resource type="Material" uid="uid://dmn76ib4vmghh" path="res://Materials/cama/presente/cabeceira_cama.tres" id="2_4bl25"]
+[ext_resource type="Material" uid="uid://d1qgtebms06wc" path="res://Materials/cama/presente/colchao.tres" id="3_sx0gv"]
+[ext_resource type="Material" uid="uid://xudwebq0pm5n" path="res://Materials/cama/presente/travesseiro.tres" id="4_3cx3f"]
+[ext_resource type="Material" uid="uid://0moffpxdp2mt" path="res://Materials/cama/presente/coberta.tres" id="4_pqdnr"]
+
+[node name="cama_presente" instance=ExtResource("1_7c0rj")]
+
+[node name="cabeceira_cama" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_4bl25")
+
+[node name="base_da_cama" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_4bl25")
+
+[node name="colchao02" parent="." index="2"]
+surface_material_override/0 = ExtResource("3_sx0gv")
+
+[node name="coberta" parent="." index="3"]
+surface_material_override/0 = ExtResource("4_pqdnr")
+
+[node name="travesseiro" parent="." index="4"]
+surface_material_override/0 = ExtResource("4_3cx3f")
+
+[node name="travesseiro_001" parent="." index="5"]
+surface_material_override/0 = ExtResource("4_3cx3f")

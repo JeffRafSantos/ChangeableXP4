@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://d0fx6b0a71e8e"]
+
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="1_6eugw"]
+[ext_resource type="Shader" path="res://Shaders/cel-shader-base.gdshader" id="2_dok8k"]
+[ext_resource type="Texture2D" uid="uid://cgqqi7jveyrej" path="res://Texture/comoda_madeira.png" id="3_i30b3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgejc"]
+render_priority = 0
+shader = ExtResource("1_6eugw")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_pgejc")
+shader = ExtResource("2_dok8k")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/specular = Color(0, 0, 0, 0.407843)
+shader_parameter/fresnel = Color(0.0196078, 0.0196078, 0.0196078, 0.301961)
+shader_parameter/base_texture = ExtResource("3_i30b3")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

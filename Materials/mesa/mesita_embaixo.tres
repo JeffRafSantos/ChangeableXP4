@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://duq5ldg0n8k0b"]
+
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="1_r25po"]
+[ext_resource type="Shader" path="res://Shaders/cel-shader-base.gdshader" id="2_rgrji"]
+[ext_resource type="Texture2D" uid="uid://bqti2eu32ncm0" path="res://Texture/mesa4_pe_cadeira.png" id="3_q7f4w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgejc"]
+render_priority = 0
+shader = ExtResource("1_r25po")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_pgejc")
+shader = ExtResource("2_rgrji")
+shader_parameter/color = Color(0.807843, 0.807843, 0.807843, 1)
+shader_parameter/specular = Color(0.0196078, 0.0196078, 0.0196078, 0.501961)
+shader_parameter/fresnel = Color(0.0196078, 0.0196078, 0.0196078, 0.301961)
+shader_parameter/base_texture = ExtResource("3_q7f4w")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(-0.11, 0.33)

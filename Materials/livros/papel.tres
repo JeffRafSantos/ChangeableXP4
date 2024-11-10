@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://dv5rw55ej5gme"]
+
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="1_n1ebb"]
+[ext_resource type="Shader" path="res://Shaders/cel-shader-base.gdshader" id="2_8ti50"]
+[ext_resource type="Texture2D" uid="uid://do8jvao47narv" path="res://Texture/livros_depositphotos_70147859-stock-photo-texture-of-old-book-pages.png" id="3_cx7hf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgejc"]
+render_priority = 0
+shader = ExtResource("1_n1ebb")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_pgejc")
+shader = ExtResource("2_8ti50")
+shader_parameter/color = Color(0.807843, 0.807843, 0.807843, 1)
+shader_parameter/specular = Color(0, 0, 0, 0.407843)
+shader_parameter/fresnel = Color(0, 0, 0, 0.301961)
+shader_parameter/base_texture = ExtResource("3_cx7hf")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

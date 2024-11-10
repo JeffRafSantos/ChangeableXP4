@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw6evi2175rb6"]
+
+[ext_resource type="PackedScene" uid="uid://dx72f8o0v0oiv" path="res://Texture/janela.glb" id="1_nogs5"]
+[ext_resource type="Material" uid="uid://dd6tprlsubq3w" path="res://Materials/janela/janelita.tres" id="2_5kwwv"]
+[ext_resource type="Material" uid="uid://dsd3rck8b78qa" path="res://Materials/janela/reflection.tres" id="3_qpkbn"]
+[ext_resource type="Material" uid="uid://b76qgtv8f18mm" path="res://Materials/janela/handle_janelita.tres" id="4_4avea"]
+
+[node name="janela" instance=ExtResource("1_nogs5")]
+
+[node name="Outer Window" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_5kwwv")
+
+[node name="Left Glass" parent="Outer Window" index="0"]
+surface_material_override/0 = ExtResource("3_qpkbn")
+
+[node name="Left Handle" parent="Outer Window" index="1"]
+surface_material_override/0 = ExtResource("4_4avea")
+
+[node name="Left Window" parent="Outer Window" index="2"]
+surface_material_override/0 = ExtResource("2_5kwwv")
+
+[node name="Left Window_001" parent="Outer Window" index="3"]
+surface_material_override/0 = ExtResource("2_5kwwv")
+
+[node name="Right Glass" parent="Outer Window" index="4"]
+surface_material_override/0 = ExtResource("3_qpkbn")
+
+[node name="Right Handle" parent="Outer Window" index="5"]
+surface_material_override/0 = ExtResource("4_4avea")
+
+[node name="tarr" parent="Outer Window" index="6"]
+surface_material_override/0 = ExtResource("2_5kwwv")
+
+[node name="tarr_001" parent="Outer Window" index="7"]
+surface_material_override/0 = ExtResource("2_5kwwv")

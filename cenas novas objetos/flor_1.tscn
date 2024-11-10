@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://0nsga8vf00yx"]
+
+[ext_resource type="PackedScene" uid="uid://b4c74cugs03ht" path="res://Texture/flor1.glb" id="1_r2yar"]
+[ext_resource type="Material" uid="uid://680f5v8hnfub" path="res://Materials/vaso/flor.tres" id="2_kryrh"]
+[ext_resource type="Material" uid="uid://y6rj7soid88b" path="res://Materials/vaso/caule.tres" id="3_m4j8e"]
+
+[node name="flor1" instance=ExtResource("1_r2yar")]
+
+[node name="flor" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_kryrh")
+
+[node name="caule" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_m4j8e")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwwg24r2od88q"]
+
+[ext_resource type="PackedScene" uid="uid://bn3wnd5rspg3" path="res://Texture/porta_armario01.glb" id="1_b5f3d"]
+[ext_resource type="Material" uid="uid://dhs70uj3vwrbf" path="res://Materials/armario.tres" id="2_gye4e"]
+[ext_resource type="Material" uid="uid://bdbcdyvldjn5h" path="res://Materials/mesa/handle_gaveta.tres" id="3_uc2c6"]
+
+[node name="porta_armario01" instance=ExtResource("1_b5f3d")]
+
+[node name="porta" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_gye4e")
+
+[node name="maçaneta" parent="porta" index="0"]
+surface_material_override/0 = ExtResource("3_uc2c6")

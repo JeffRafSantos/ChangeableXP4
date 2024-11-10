@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://n6lawv4fb7rp"]
 
 [ext_resource type="Script" path="res://scene/Objects_scene/Planta.gd" id="1_33ptv"]
-[ext_resource type="PackedScene" path="res://Texture/vaso2presente.glb" id="3_6r53x"]
-[ext_resource type="PackedScene" uid="uid://b4c74cugs03ht" path="res://Texture/flor1.glb" id="4_rf2oq"]
+[ext_resource type="PackedScene" uid="uid://0nsga8vf00yx" path="res://cenas novas objetos/flor_1.tscn" id="2_hg4ot"]
+[ext_resource type="PackedScene" uid="uid://ceg86asweu6go" path="res://cenas novas objetos/vaso_2_presente.tscn" id="3_bev4n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mstys"]
 
@@ -18,8 +18,8 @@ script = ExtResource("1_33ptv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10193, 0)
 shape = SubResource("CylinderShape3D_26nj5")
 
-[node name="flor1" parent="." instance=ExtResource("4_rf2oq")]
+[node name="flor1" parent="." instance=ExtResource("2_hg4ot")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.390869, 0.0434943, 0)
 
-[node name="vaso2presente" parent="." instance=ExtResource("3_6r53x")]
+[node name="vaso2presente" parent="." instance=ExtResource("3_bev4n")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
