@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://xje8fhkuu4dv"]
+
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="1_8ucdv"]
+[ext_resource type="Shader" path="res://Shaders/cel-shader-reflection_normal.gdshader" id="2_dg03f"]
+[ext_resource type="Texture2D" uid="uid://bvj6ceiq5w7h2" path="res://Materials/TilesTravertine001_COL_2K.jpg" id="3_sgg3i"]
+[ext_resource type="Texture2D" uid="uid://cmiontgdenmgb" path="res://Materials/TilesTravertine001_NRM_2K.jpg" id="4_u80og"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgejc"]
+render_priority = 0
+shader = ExtResource("1_8ucdv")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_pgejc")
+shader = ExtResource("2_dg03f")
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/normal_scale = 16.0
+shader_parameter/normal_map = ExtResource("4_u80og")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/specular = Color(0.156863, 0.156863, 0.156863, 0.501961)
+shader_parameter/fresnel = Color(0, 0, 0, 0.301961)
+shader_parameter/base_texture = ExtResource("3_sgg3i")
+shader_parameter/uv_scale = Vector2(30.085, 9.31)
+shader_parameter/uv_offset = Vector2(0, 0)

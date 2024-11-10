@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bhujb3wi3ujoq"]
+
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="1_v4w0j"]
+[ext_resource type="Shader" path="res://Shaders/cel-shader-reflection_normal.gdshader" id="2_0krlj"]
+[ext_resource type="Texture2D" uid="uid://c5gx7rmokwx32" path="res://Materials/Poliigon_WoodFloorAsh_4186_BaseColor.jpg" id="3_ardbt"]
+[ext_resource type="Texture2D" uid="uid://dwblvdvm0gu6h" path="res://Materials/Poliigon_WoodFloorAsh_4186_Normal.png" id="4_sctyi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgejc"]
+render_priority = 0
+shader = ExtResource("1_v4w0j")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_pgejc")
+shader = ExtResource("2_0krlj")
+shader_parameter/metallic = 0.06
+shader_parameter/roughness = 0.0
+shader_parameter/normal_scale = 16.0
+shader_parameter/normal_map = ExtResource("4_sctyi")
+shader_parameter/color = Color(1, 0.886275, 0.898039, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/base_texture = ExtResource("3_ardbt")
+shader_parameter/uv_scale = Vector2(4.845, 2.835)
+shader_parameter/uv_offset = Vector2(0, 0)
