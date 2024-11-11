@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://uat6p2nx3xkr"]
+[gd_scene load_steps=4 format=3 uid="uid://uat6p2nx3xkr"]
 
 [ext_resource type="Script" path="res://scene/Credits.gd" id="1_qxax1"]
+[ext_resource type="Texture2D" uid="uid://b3mi12p01bof4" path="res://Letter.jpg" id="2_2lgdp"]
 [ext_resource type="FontFile" uid="uid://72qx53h8aeus" path="res://scene/XTypewriter-Regular.ttf" id="2_151ab"]
 
 [node name="Credits" type="Control"]
@@ -12,14 +13,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qxax1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.223529, 0.223529, 0.223529, 1)
+self_modulate = Color(0.854902, 0.854902, 0.854902, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -241.5
+offset_bottom = 241.5
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_2lgdp")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -39,6 +44,8 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -423.0
+offset_right = 423.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1

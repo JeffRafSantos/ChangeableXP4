@@ -18,17 +18,6 @@ func _process(delta):
 		audio.play()
 	pass
 
-func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scene/Primeira_Cena.tscn")
 
-
-func _on_controls_pressed():
-	get_tree().change_scene_to_file("res://scene/Controls.tscn")
-
-
-func _on_credits_pressed():
-	get_tree().change_scene_to_file("res://scene/Credits.tscn")
-
-
-func _on_quit_pressed():
-	get_tree().quit()
+func _on_animation_player_animation_finished(anim_name):
+	get_tree().change_scene_to_file("res://scene/world.tscn")

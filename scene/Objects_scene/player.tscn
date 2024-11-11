@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwjhl01gqs0dc"]
+[gd_scene load_steps=12 format=3 uid="uid://dwjhl01gqs0dc"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7xp55"]
 [ext_resource type="Script" path="res://scene/Objects_scene/InteractionRay.gd" id="2_yeeqr"]
 [ext_resource type="Script" path="res://scene/Objects_scene/GrabRay.gd" id="3_a6l83"]
+[ext_resource type="AudioStream" uid="uid://buukcr5w7gvd3" path="res://Sons/passo1Pronto.wav" id="4_yt1hf"]
+[ext_resource type="AudioStream" uid="uid://bs61dkpsx7hy1" path="res://Sons/passo2Pronto.wav" id="5_p647l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqhw2"]
 albedo_color = Color(0.0862745, 0.133333, 0.847059, 1)
@@ -12,6 +14,57 @@ material = SubResource("StandardMaterial3D_pqhw2")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_djfyd"]
 
+[sub_resource type="Animation" id="Animation_02qvl"]
+resource_name = "Andar"
+length = 0.6
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_footstep_audio"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.1, 0), Vector3(0, -0.2, 0), Vector3(0, -0.1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_88c0s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_78q5k"]
+_data = {
+"Andar": SubResource("Animation_02qvl"),
+"RESET": SubResource("Animation_88c0s")
+}
+
 [node name="player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(0.282835, 0, 0, 0, 0.282835, 0, 0, 0, 0.282835, 0, 0.74772, 0.16665)
 collision_layer = 2
@@ -20,16 +73,16 @@ script = ExtResource("1_7xp55")
 metadata/_edit_group_ = true
 
 [node name="mesh_player" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.3, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_dufxp")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.3, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_djfyd")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17985, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41787, 0)
 
 [node name="Camera" type="Camera3D" parent="Head"]
 transform = Transform3D(3.53563, 0, 0, 0, 3.53563, 0, 0, 0, 3.53563, 0, 0, 0)
@@ -55,7 +108,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GrabRay" type="RayCast3D" parent="Head"]
-target_position = Vector3(0, 0, -3)
+target_position = Vector3(0, 0, -4)
 collision_mask = 7
 script = ExtResource("3_a6l83")
 
@@ -75,6 +128,20 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yt1hf")
+volume_db = -15.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_p647l")
+volume_db = -15.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_78q5k")
+}
+autoplay = "Andar"
 
 [connection signal="picked_false" from="." to="Head/InteractionRay" method="_picked_false"]
 [connection signal="picked_true" from="." to="Head/InteractionRay" method="_picked_true"]

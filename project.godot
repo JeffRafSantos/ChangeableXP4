@@ -100,8 +100,7 @@ inspect={
 
 [physics]
 
-common/physics_ticks_per_second=180
-common/max_physics_steps_per_frame=20
+common/physics_ticks_per_second=160
 
 [shader_globals]
 

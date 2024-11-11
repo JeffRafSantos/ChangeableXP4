@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id="Animation_pb3yf"]
 resource_name = "DayNightCycle"
-length = 300.0
+length = 180.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -13,7 +13,7 @@ tracks/0/path = NodePath("DirectionalLight3D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 300),
+"times": PackedFloat32Array(0, 180),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(3.31613, 0, 0), Vector3(6.28319, 0, 0)]
