@@ -2,8 +2,8 @@
 
 [ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="1_cypfa"]
 [ext_resource type="Shader" path="res://Shaders/cel-shader-reflection_normal.gdshader" id="2_f5eye"]
-[ext_resource type="Texture2D" uid="uid://c5gx7rmokwx32" path="res://Materials/Poliigon_WoodFloorAsh_4186_BaseColor.jpg" id="3_v3y70"]
-[ext_resource type="Texture2D" uid="uid://dwblvdvm0gu6h" path="res://Materials/Poliigon_WoodFloorAsh_4186_Normal.png" id="4_rmrn2"]
+[ext_resource type="Texture2D" uid="uid://bvj6ceiq5w7h2" path="res://Materials/TilesTravertine001_COL_2K.jpg" id="3_e5dfj"]
+[ext_resource type="Texture2D" uid="uid://cmiontgdenmgb" path="res://Materials/TilesTravertine001_NRM_2K.jpg" id="4_in6ou"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pgejc"]
 render_priority = 0
@@ -14,12 +14,12 @@ render_priority = 0
 next_pass = SubResource("ShaderMaterial_pgejc")
 shader = ExtResource("2_f5eye")
 shader_parameter/metallic = 0.06
-shader_parameter/roughness = 0.0
+shader_parameter/roughness = 1.0
 shader_parameter/normal_scale = 16.0
-shader_parameter/normal_map = ExtResource("4_rmrn2")
+shader_parameter/normal_map = ExtResource("4_in6ou")
 shader_parameter/color = Color(1, 0.886275, 0.898039, 1)
-shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/specular = Color(0.156863, 0.156863, 0.156863, 0.501961)
 shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
-shader_parameter/base_texture = ExtResource("3_v3y70")
-shader_parameter/uv_scale = Vector2(4.845, 2.835)
+shader_parameter/base_texture = ExtResource("3_e5dfj")
+shader_parameter/uv_scale = Vector2(25.04, 4.35)
 shader_parameter/uv_offset = Vector2(0, 0)
