@@ -3,6 +3,8 @@ extends Node3D
 signal Open(body)
 
 @onready var timer = $Timer
+@onready var audio_player = $AudioStreamPlayer
+
 @export var prompt_message = "Interact"
 @export var prompt_action = "interact"
 
@@ -42,6 +44,7 @@ func Armario_porta():
 		elif open == false:
 			open = true
 			playback.travel("Animation_Open")
+		audio_player.play()
 		timer.start()
 
 
