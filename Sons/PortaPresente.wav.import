@@ -2,7 +2,11 @@
 
 importer="wav"
 type="AudioStreamWAV"
+<<<<<<< HEAD
 uid="uid://cubjfuwknqytl"
+=======
+uid="uid://dhpc4m8dda3pu"
+>>>>>>> main
 path="res://.godot/imported/PortaPresente.wav-03e50c1b3e0e0ec589e822f642468990.sample"
 
 [deps]

@@ -44,6 +44,10 @@ func Armario_porta():
 		elif open == false:
 			open = true
 			playback.travel("Animation_Open")
+<<<<<<< HEAD
+=======
+		audio_player.set_pitch_scale(randf_range(0.8,1.2))
+>>>>>>> main
 		audio_player.play()
 		timer.start()
 

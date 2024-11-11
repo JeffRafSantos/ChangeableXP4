@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cxxo88boi248t" path="res://cenas novas objetos/porta_armario_4.tscn" id="4_8u8n5"]
 [ext_resource type="Script" path="res://scene/Objects_scene/Dobradiça_esquerda.gd" id="4_xjkrc"]
 [ext_resource type="PackedScene" uid="uid://cwwg24r2od88q" path="res://cenas novas objetos/porta_armario_01.tscn" id="6_10huo"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://cubjfuwknqytl" path="res://Sons/PortaPresente.wav" id="7_mlh0h"]
+=======
+[ext_resource type="AudioStream" uid="uid://dhpc4m8dda3pu" path="res://Sons/PortaPresente.wav" id="7_vqmic"]
+>>>>>>> main
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7iggu"]
 points = PackedVector3Array(-0.0158482, 0.971845, -0.615873, 0.047619, 1.03528, 0.0190476, -0.0158482, 1.03528, 0.0190476, 0.047619, -0.995675, 0.0190476, 0.111086, -0.0118156, -0.234958, -0.0158482, -0.995675, -0.615873, 0.047619, 0.971845, -0.615873, 0.047619, -0.995675, -0.615873, -0.0158482, -0.995675, 0.0190476, 0.111086, -0.0436299, -0.139683, 0.111086, 0.0832299, -0.203199, 0.047619, 1.03528, -0.330109, -0.0158482, 1.03528, -0.330109, 0.047619, 1.00366, -0.520535, -0.0158482, 1.00366, -0.520535, 0.111086, -0.0436299, -0.203199, 0.111086, 0.0514155, -0.234958)
@@ -171,7 +175,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.408911, -0.0782776, -0.614
 shape = SubResource("BoxShape3D_0fwfy")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+<<<<<<< HEAD
 stream = ExtResource("7_mlh0h")
+=======
+stream = ExtResource("7_vqmic")
+volume_db = -10.0
+pitch_scale = 3.0
+>>>>>>> main
 
 [connection signal="Open" from="." to="Dobradiça_direita" method="Open"]
 [connection signal="Open" from="." to="Dobradiça_esquerda" method="Open"]
