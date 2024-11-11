@@ -15,7 +15,7 @@ func get_promp():
 	for action in InputMap.action_get_events(prompt_action):
 		if action is InputEventKey:
 			Key_name = OS.get_keycode_string(action.keycode)
-	return prompt_message + "\n[" + Key_name + "]"
+	return prompt_message + "\n[E]"
 	
 func interaction(body):
 	print("Sementado")

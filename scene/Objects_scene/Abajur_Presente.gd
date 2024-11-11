@@ -5,6 +5,7 @@ signal  interacted(body)
 @export var prompt_message = "Ligar"
 @export var prompt_action = "interact"
 
+@onready var audio = $AudioStreamPlayer
 @onready var luz = $OmniLight3D 
 
 var light = true
@@ -35,4 +36,5 @@ func interaction(body):
 		else:
 			luz.set_param(Light3D.PARAM_ENERGY,1)
 			light = true
-		print(luz.get_param(Light3D.PARAM_ENERGY))
+		audio.set_pitch_scale(randf_range(0.8,1.2))
+		audio.play()

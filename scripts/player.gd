@@ -6,10 +6,14 @@ signal picked_false
 @onready var Head = $"Head"
 @onready var Grab = $"Head/GrabRay"
 @onready var point = $"Head/Hold"
+@onready var audio_player1 = $AudioStreamPlayer
+@onready var audio_player2 = $AudioStreamPlayer2
+@onready var animation = $AnimationPlayer
 
 var picked_object: RigidBody3D
 var pull_power = 10
 var rotation_power = 0.05
+
 
 var locked = false
 const SPEED = 3.0
@@ -68,6 +72,7 @@ func _process(delta):
 			picked_object.look_at(self.global_position)
 		else:
 			#picked_object.position = b
+			#picked_object.set_freeze_enabled(true)
 			picked_object.move_and_collide((dir * dist)*delta)
 		emit_signal("picked_true")
 	elif picked_object == null:
@@ -79,8 +84,10 @@ func _physics_process(delta):
 	var vector_side = transform.basis.x * axys.x
 	var vector_final = (vector_front + vector_side).normalized() * SPEED
 	if !locked:
-		velocity = vector_final + Vector3(0, velocity.y, 0)
+		velocity = vector_final + Vector3(0,-gravity, 0)
 		move_and_slide()
+		if velocity != Vector3():
+			animation.play("Andar")
 
 func Player_rotation(event):
 	if event is InputEventMouseMotion:
@@ -89,7 +96,7 @@ func Player_rotation(event):
 		#rotaciona a camera no eixo x
 		Head.rotate_x(- deg_to_rad(event.relative.y * sensitivity))
 		#ajusta a rotação da camera para previnir visão invertida
-		var rotation_up = clamp(Head.rotation.x, deg_to_rad(-70), deg_to_rad(60))
+		var rotation_up = clamp(Head.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 		#camera recebe o novo angulo de visão
 		Head.rotation.x = rotation_up
 
@@ -110,3 +117,11 @@ func rotate_object(event):
 			picked_object.rotation.x = (picked_object.rotation.x + (event.relative.y) * 0.005)
 			#picked_object.apply_torque(Vector3(event.relative.x,event.relative.y,0))
 			#print(event.relative, " ", picked_object.rotation)
+
+func _play_footstep_audio():
+	audio_player1.set_pitch_scale(randf_range(0.8,1.2))
+	audio_player1.play()
+
+func _play_footstep_audio2():
+	audio_player2.set_pitch_scale(randf_range(0.8,1.2))
+	audio_player2.play()

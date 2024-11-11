@@ -8,15 +8,15 @@ size = Vector3(0.493469, 0.556671, 0.49881)
 [sub_resource type="BoxShape3D" id="BoxShape3D_x1w45"]
 size = Vector3(0.0619507, 0.482544, 0.417847)
 
-[node name="Cadeira" type="RigidBody3D" groups=["grab"]]
+[node name="Cadeira" type="RigidBody3D"]
 
 [node name="cadeira6" parent="." instance=ExtResource("1_3rmr0")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.202717, -0.335554, 0.0850748)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.202717, -0.0664375, 0.0850748)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0211233, -0.104154, -0.0301974)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0211233, 0.164963, -0.0301974)
 shape = SubResource("BoxShape3D_vca47")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.220335, 0.410585, -0.0365603)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.220335, 0.679702, -0.0365603)
 shape = SubResource("BoxShape3D_x1w45")

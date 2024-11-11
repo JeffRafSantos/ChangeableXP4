@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo8a7ieu4lsn2"]
+[gd_scene load_steps=5 format=3 uid="uid://bo8a7ieu4lsn2"]
 
 [ext_resource type="Script" path="res://scene/Objects_scene/Vaso.gd" id="1_nkmji"]
 [ext_resource type="PackedScene" uid="uid://bc5oen3nb84i7" path="res://cenas novas objetos/vaso_2_passado.tscn" id="2_mcovn"]
+[ext_resource type="AudioStream" uid="uid://s365yd8etn3d" path="res://Sons/digging20200426-125956_01-40420.wav" id="3_445kt"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qv37y"]
 height = 0.176002
@@ -17,3 +18,7 @@ shape = SubResource("CylinderShape3D_qv37y")
 
 [node name="vaso2passado" parent="." instance=ExtResource("2_mcovn")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.417203, 0, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_445kt")
+volume_db = -25.0
