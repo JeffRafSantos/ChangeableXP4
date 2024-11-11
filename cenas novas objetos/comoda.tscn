@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://rxw4s5f8jd0r"]
+
+[ext_resource type="PackedScene" uid="uid://w6ek3ufv68ml" path="res://Texture/comoda.glb" id="1_qw48e"]
+[ext_resource type="Material" uid="uid://d0fx6b0a71e8e" path="res://Materials/comoda.tres" id="2_j2slu"]
+[ext_resource type="Material" uid="uid://bdbcdyvldjn5h" path="res://Materials/mesa/handle_gaveta.tres" id="3_kg4jc"]
+
+[node name="comoda" instance=ExtResource("1_qw48e")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_j2slu")
+
+[node name="Cube_001" parent="Cube" index="0"]
+surface_material_override/0 = ExtResource("3_kg4jc")
+
+[node name="Cube_002" parent="Cube" index="1"]
+surface_material_override/0 = ExtResource("3_kg4jc")
+
+[node name="Cube_003" parent="Cube" index="2"]
+surface_material_override/0 = ExtResource("3_kg4jc")
+
+[node name="Cube_004" parent="Cube" index="3"]
+surface_material_override/0 = ExtResource("3_kg4jc")
+
+[node name="Cube_005" parent="Cube" index="4"]
+surface_material_override/0 = ExtResource("2_j2slu")

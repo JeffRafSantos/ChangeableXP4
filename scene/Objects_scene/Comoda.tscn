@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://camjx3tylkt0q"]
 
-[ext_resource type="PackedScene" uid="uid://w6ek3ufv68ml" path="res://Texture/comoda.glb" id="1_jej4n"]
+[ext_resource type="PackedScene" uid="uid://rxw4s5f8jd0r" path="res://cenas novas objetos/comoda.tscn" id="1_258yt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ae1i7"]
 size = Vector3(0.746155, 0.742004, 0.750351)
@@ -11,5 +11,5 @@ size = Vector3(0.746155, 0.742004, 0.750351)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00497437, 0.377425, 0.00345612)
 shape = SubResource("BoxShape3D_ae1i7")
 
-[node name="comoda" parent="." instance=ExtResource("1_jej4n")]
+[node name="comoda" parent="." instance=ExtResource("1_258yt")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)

@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://sfmen442gae"]
+
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="1_8vllt"]
+[ext_resource type="Shader" path="res://Shaders/cel-shader-reflection.gdshader" id="2_f61m8"]
+[ext_resource type="Texture2D" uid="uid://bhoa4fo4saoxd" path="res://Texture/vaso2passado_terra_Base_Color.png" id="3_vgn1e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgejc"]
+render_priority = 0
+shader = ExtResource("1_8vllt")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_pgejc")
+shader = ExtResource("2_f61m8")
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.439
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/specular = Color(0, 0, 0, 0.407843)
+shader_parameter/fresnel = Color(0.0196078, 0.0196078, 0.0196078, 0.301961)
+shader_parameter/base_texture = ExtResource("3_vgn1e")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

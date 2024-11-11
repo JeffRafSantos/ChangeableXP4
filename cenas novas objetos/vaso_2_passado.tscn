@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc5oen3nb84i7"]
+
+[ext_resource type="PackedScene" uid="uid://c0tn2vgaqq5km" path="res://Texture/vaso2passado.glb" id="1_le7vi"]
+[ext_resource type="Material" uid="uid://pvr0et5d4b41" path="res://Materials/vaso/vaso.tres" id="2_2e6nv"]
+
+[node name="vaso2passado" instance=ExtResource("1_le7vi")]
+
+[node name="vaso_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_2e6nv")
