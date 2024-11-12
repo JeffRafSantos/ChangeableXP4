@@ -86,6 +86,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123863, 0, 0)
 
 [node name="DayNightSystem" parent="." instance=ExtResource("1_5xdis")]
 
+[node name="solids2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.222, 0)
+
+[node name="floor" type="MeshInstance3D" parent="solids2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.62168, 0)
+mesh = SubResource("PlaneMesh_kok7r")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="solids2/floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="solids2/floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s6s1q")
+
+[node name="solidsPass2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01004, 5.222, 0)
+
+[node name="floor" type="MeshInstance3D" parent="solidsPass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.62168, 0)
+mesh = SubResource("PlaneMesh_kok7r")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="solidsPass2/floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="solidsPass2/floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s6s1q")
+
 [node name="solids" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.62168, 0)
 
@@ -99,8 +125,21 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="solids/floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_s6s1q")
 
+[node name="solidsPass" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01004, 2.62168, 0)
+
+[node name="floor" type="MeshInstance3D" parent="solidsPass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.62168, 0)
+mesh = SubResource("PlaneMesh_kok7r")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="solidsPass/floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="solidsPass/floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s6s1q")
+
 [node name="wall" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23517e-08, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1.3, 0, 0, 0, 1, -2.23517e-08, 0, 0)
 metadata/_edit_group_ = true
 
 [node name="wallLeft" type="MeshInstance3D" parent="wall"]
@@ -143,21 +182,8 @@ mesh = SubResource("BoxMesh_xxm2x")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, 3.26)
 shape = SubResource("BoxShape3D_rjdb4")
 
-[node name="solidsPass" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01004, 2.62168, 0)
-
-[node name="floor" type="MeshInstance3D" parent="solidsPass"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.62168, 0)
-mesh = SubResource("PlaneMesh_kok7r")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="solidsPass/floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="solidsPass/floor/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_s6s1q")
-
 [node name="wallPass" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01004, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1.3, 0, 0, 0, 1, 7.01004, 0, 0)
 metadata/_edit_group_ = true
 
 [node name="wallRPass" type="MeshInstance3D" parent="wallPass"]
@@ -169,11 +195,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.253, 1, 0)
 shape = SubResource("BoxShape3D_g7gkp")
 
 [node name="wallFPass" type="MeshInstance3D" parent="wallPass"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, -3.253)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.75953, 1, -3.253)
 mesh = SubResource("BoxMesh_g6vur")
 
 [node name="collisionFPass" type="CollisionShape3D" parent="wallPass"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, -3.253)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.75953, 1, -3.253)
 shape = SubResource("BoxShape3D_hq346")
 
 [node name="wallRearPass" type="MeshInstance3D" parent="wallPass"]
@@ -188,6 +214,25 @@ shape = SubResource("BoxShape3D_jda1b")
 transform = Transform3D(0.439613, 0, 0, 0, 1, 0, 0, 0, 1, -3.62561, 1, 0.796033)
 mesh = SubResource("BoxMesh_wugdo")
 skeleton = NodePath("../../wall")
+
+[node name="wallFront" type="MeshInstance3D" parent="wallPass"]
+transform = Transform3D(-1.50101e-08, 0, -1, 0, 0.482279, 0, 0.343392, 0, -4.37114e-08, 0, 0.374894, -3.09048)
+mesh = SubResource("BoxMesh_daf5s")
+
+[node name="wallFront2" type="MeshInstance3D" parent="wallPass"]
+transform = Transform3D(-1.50101e-08, 0, -0.402575, 0, 0.570705, 0, 0.343392, 0, -1.75971e-08, 2.14291, 1.42952, -3.09048)
+mesh = SubResource("BoxMesh_daf5s")
+
+[node name="wallFront3" type="MeshInstance3D" parent="wallPass"]
+transform = Transform3D(-1.50101e-08, 0, -0.402575, 0, 0.570705, 0, 0.343392, 0, -1.75971e-08, -2.11387, 1.43016, -3.09048)
+mesh = SubResource("BoxMesh_daf5s")
+
+[node name="collisionWF" type="CollisionShape3D" parent="wallPass"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, -3.253)
+shape = SubResource("BoxShape3D_mhywg")
+
+[node name="janela2" parent="wallPass" instance=ExtResource("16_c4owk")]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 0.0146823, 0.751012, -2.99361)
 
 [node name="player" parent="." instance=ExtResource("2_u4sqg")]
 transform = Transform3D(0.449801, 0, 0.146314, 0, 0.473, 0, -0.146314, 0, 0.449801, -1.77458, 0.653556, 1.35072)
@@ -228,10 +273,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83561, 1.09256, 2.53671)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19427, 0.941625, 2.59105)
 
 [node name="Armario2" parent="." instance=ExtResource("10_usd45")]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 3.92771, 1.07212, -2.37045)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 3.92771, 1.02476, -2.37045)
 
 [node name="Armario" parent="." instance=ExtResource("10_usd45")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.56657, 1.07309, -2.37147)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.56657, 1.02573, -2.37147)
 
 [node name="livros" parent="." instance=ExtResource("11_qa2vl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.477173, 0.862083, -2.46454)
@@ -252,7 +297,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.116
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.51628, 0.839293, -2.46522)
 
 [node name="janela2" parent="." instance=ExtResource("16_c4owk")]
-transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 0.0146824, 0.775743, -2.99361)
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.3, 0, 0.2, 0, -8.74228e-09, 0.0146824, 0.899966, -2.99361)
 
 [node name="Cadeira" parent="." instance=ExtResource("17_buxsk")]
 transform = Transform3D(0.798142, 0, 0.60247, 0, 1, 0, -0.60247, 0, 0.798142, -0.84584, 0.37902, -1.57685)
@@ -261,3 +306,7 @@ transform = Transform3D(0.798142, 0, 0.60247, 0, 1, 0, -0.60247, 0, 0.798142, -0
 [connection signal="picked_true" from="player" to="Armario" method="_picked_true"]
 [connection signal="interacted" from="Semente" to="Vaso" method="_on_semente_interacted"]
 [connection signal="interacted" from="Vaso" to="Planta1" method="_on_vaso_interacted"]
+[connection signal="Open" from="Armario2" to="Armario2/Dobradiça_direita" method="Open"]
+[connection signal="Open" from="Armario2" to="Armario2/Dobradiça_esquerda" method="Open"]
+[connection signal="Open" from="Armario" to="Armario/Dobradiça_direita" method="Open"]
+[connection signal="Open" from="Armario" to="Armario/Dobradiça_esquerda" method="Open"]
