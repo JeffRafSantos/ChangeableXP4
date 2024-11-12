@@ -65,14 +65,14 @@ func _process(delta):
 		var dir : Vector3 = a.direction_to(b)
 		var dist : float = a.distance_to(b) * pull_power
 		if !locked:
-			picked_object.set_freeze_enabled(true)
+			picked_object.set_freeze_enabled(false)
 			#picked_object.look_at_from_position(lerp(a,b,0.1),Head.global_position)
-			#picked_object.set_linear_velocity((b-a)*pull_power)
-			picked_object.move_and_collide((dir * dist) * delta)
+			picked_object.set_linear_velocity((b-a)*pull_power)
+			#picked_object.move_and_collide((dir * dist) * delta)
 			picked_object.look_at(self.global_position)
 		else:
 			#picked_object.position = b
-			#picked_object.set_freeze_enabled(true)
+			picked_object.set_freeze_enabled(true)
 			picked_object.move_and_collide((dir * dist)*delta)
 		emit_signal("picked_true")
 	elif picked_object == null:
@@ -107,7 +107,7 @@ func pick_object():
 
 func remove_object():
 	picked_object.set_freeze_enabled(false)
-	picked_object.set_linear_velocity(Vector3(0,0.001,0))
+	#picked_object.set_linear_velocity(Vector3(0,-0.001,0))
 	picked_object = null
 
 func rotate_object(event):
