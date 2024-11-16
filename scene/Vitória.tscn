@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8osy27ea2oxu"]
 
 [ext_resource type="Script" path="res://scene/Derrota.gd" id="1_gl3n5"]
-[ext_resource type="Texture2D" uid="uid://b3mi12p01bof4" path="res://Texture/Letter.jpg" id="2_55on2"]
+[ext_resource type="Texture2D" path="res://Texture/Letter.jpg" id="2_55on2"]
 [ext_resource type="FontFile" uid="uid://72qx53h8aeus" path="res://scene/XTypewriter-Regular.ttf" id="3_pl1aa"]
 [ext_resource type="AudioStream" uid="uid://cdqgkopcdvyjl" path="res://Sons/typewriter.wav" id="4_ugsuu"]
 
@@ -42,7 +42,7 @@ _data = {
 "Text": SubResource("Animation_mq6jw")
 }
 
-[node name="Credits" type="Control"]
+[node name="Credits2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
