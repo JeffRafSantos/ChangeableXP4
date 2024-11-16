@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dibahtbd5fhwd"]
 
 [ext_resource type="Script" path="res://scene/Objects_scene/Semente.gd" id="1_5c1s7"]
-[ext_resource type="PackedScene" path="res://Texture/sementes02.glb" id="2_clr0j"]
+[ext_resource type="PackedScene" uid="uid://6lcm8qswp3cw" path="res://Texture/sementes02.glb" id="2_clr0j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ekjuv"]
 size = Vector3(0.106934, 0.0270996, 0.0922852)

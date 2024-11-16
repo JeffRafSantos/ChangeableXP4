@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bvdl3gfsqwdfh"]
 
 [ext_resource type="Script" path="res://scene/Derrota.gd" id="1_1gjx7"]
-[ext_resource type="Texture2D" uid="uid://b3mi12p01bof4" path="res://Letter.jpg" id="2_6i6pc"]
+[ext_resource type="Texture2D" path="res://Texture/Letter.jpg" id="2_6i6pc"]
 [ext_resource type="FontFile" uid="uid://72qx53h8aeus" path="res://scene/XTypewriter-Regular.ttf" id="2_csdm5"]
 [ext_resource type="AudioStream" uid="uid://cdqgkopcdvyjl" path="res://Sons/typewriter.wav" id="4_ajtru"]
 
 [sub_resource type="Animation" id="Animation_aio4b"]
-length = 0.001
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -14,10 +14,10 @@ tracks/0/path = NodePath("VBoxContainer/Label:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_mq6jw"]
