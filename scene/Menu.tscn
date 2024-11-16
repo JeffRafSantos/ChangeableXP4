@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://camlual3kp4lt"]
 
 [ext_resource type="Script" path="res://scene/Menu.gd" id="1_gwsx0"]
-[ext_resource type="Texture2D" uid="uid://b3mi12p01bof4" path="res://Letter.jpg" id="2_2jgrn"]
+[ext_resource type="Texture2D" uid="uid://b3mi12p01bof4" path="res://Texture/Letter.jpg" id="2_2jgrn"]
 [ext_resource type="FontFile" uid="uid://72qx53h8aeus" path="res://scene/XTypewriter-Regular.ttf" id="2_3rrji"]
 [ext_resource type="AudioStream" uid="uid://cdqgkopcdvyjl" path="res://Sons/typewriter.wav" id="4_1sc21"]
 

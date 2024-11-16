@@ -3,7 +3,7 @@ extends Control
 @onready var ani = $AnimationPlayer
 @onready var text = $VBoxContainer/Label
 @onready var audio = $AudioStreamPlayer
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree for the gfirst time.
 var visible_characters = 0
 func _ready():
 	ani.play("Text")
