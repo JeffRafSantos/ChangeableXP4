@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnmk7uq14ttl1"
-path.s3tc="res://.godot/imported/Captura de tela 2024-11-03 234056.png-b87f5c7e603d61f8eb67c4defbb1a09f.s3tc.ctex"
+path.s3tc="res://.godot/imported/Noise_Texture.png-06319fc3575e9dbd127cbd3d9e6f84a2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Shaders/Captura de tela 2024-11-03 234056.png"
-dest_files=["res://.godot/imported/Captura de tela 2024-11-03 234056.png-b87f5c7e603d61f8eb67c4defbb1a09f.s3tc.ctex"]
+source_file="res://Shaders/Noise_Texture.png"
+dest_files=["res://.godot/imported/Noise_Texture.png-06319fc3575e9dbd127cbd3d9e6f84a2.s3tc.ctex"]
 
 [params]
 
